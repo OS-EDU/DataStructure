@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ArrayQueueDemo {
     public static void main(String[] args) {
         // 创建一个队列
-        ArrayQueue queue = new ArrayQueue(4);
+        ArrayQueue queue = new ArrayQueue(3);
         char key = ' ';// 接受用户输入的菜单
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
