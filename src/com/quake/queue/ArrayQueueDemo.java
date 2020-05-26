@@ -111,7 +111,7 @@ class ArrayQueue {
             return;
         }
         // 遍历
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = front + 1; i < arr.length; i++) {
             System.out.printf("arr[%d]=%d\n", i, arr[i]);
         }
     }
