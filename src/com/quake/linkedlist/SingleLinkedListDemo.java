@@ -18,13 +18,13 @@ public class SingleLinkedListDemo {
         singleLinkedList.addByOrder(hero1);
         singleLinkedList.addByOrder(hero4);
         System.out.println("原始的链表信息如下：");
-        singleLinkedList.list();
+        singleLinkedList.show();
 
         System.out.println("修改之后的结点信息如下：");
         singleLinkedList.del(3);// 删除结点
         HeroNode newHeroNode = new HeroNode(2, "卢员外", "玉麒麟2.0");
         singleLinkedList.update(newHeroNode);
-        singleLinkedList.list();
+        singleLinkedList.show();
 
     }
 }
@@ -73,9 +73,9 @@ class SingleLinkedList {
             if (temp.next == null) {//说明temp已经在链表的最后
                 break;
             }
-            if (temp.next.num >= heroNode.num) {//位置找到，就在temp的后面插入
+            if (temp.next.no >= heroNode.no) {//位置找到，就在temp的后面插入
                 break;
-            } else if (temp.next.num == heroNode.num) {//说明希望添加的heroNode编号已经存在
+            } else if (temp.next.no == heroNode.no) {//说明希望添加的heroNode编号已经存在
                 flag = true;//说明编号存在
                 break;
             }
@@ -83,7 +83,7 @@ class SingleLinkedList {
         }
         //判断flag的值
         if (flag) {//不能添加，说明编号已经存在
-            System.out.printf("准备插入的英雄编号%d已经存在，添加失败\n", heroNode.num);
+            System.out.printf("准备插入的英雄编号%d已经存在，添加失败\n", heroNode.no);
         } else {
             //插入到链表中，temp的后面
             heroNode.next = temp.next;
@@ -106,7 +106,7 @@ class SingleLinkedList {
             if (temp == null) {
                 break;//已经遍历结束
             }
-            if (temp.num == newHeroNode.num) {//找到
+            if (temp.no == newHeroNode.no) {//找到
                 flag = true;
                 break;
             }
@@ -117,7 +117,7 @@ class SingleLinkedList {
             temp.name = newHeroNode.name;
             temp.nickname = newHeroNode.nickname;
         } else {//没有找到
-            System.out.printf("没有找到编号%d的节点，不能修改\n", newHeroNode.num);
+            System.out.printf("没有找到编号%d的节点，不能修改\n", newHeroNode.no);
         }
     }
 
@@ -134,7 +134,7 @@ class SingleLinkedList {
             if (temp.next == null) {
                 break;//已经到链表的最后
             }
-            if (temp.next.num == num) {//找到待删除节点的前一个节点temp
+            if (temp.next.no == num) {//找到待删除节点的前一个节点temp
                 flag = true;
                 break;
             }
@@ -150,7 +150,7 @@ class SingleLinkedList {
     }
 
     //显示链表，遍历
-    public void list() {
+    public void show() {
         //判断链表是否为空
         if (head.next == null) {
             System.out.println("链表为空");
@@ -172,13 +172,13 @@ class SingleLinkedList {
 }
 // 定义HeroNode，每个HeroNode对象就是一个结点
 class HeroNode {
-    public int num;// 编号
+    public int no;// 编号
     public String name;// 姓名
     public String nickname;// 昵称
     public HeroNode next;// next域，指向下一个节点
 
     public HeroNode(int no, String name, String nickname) {
-        this.num = no;
+        this.no = no;
         this.name = name;
         this.nickname = nickname;
     }
@@ -187,7 +187,7 @@ class HeroNode {
     @Override
     public String toString() {
         return "HeroNode{" +
-                "no='" + num + '\'' +
+                "no='" + no + '\'' +
                 ", name='" + name + '\'' +
                 ", nickname=" + nickname +
                 '}';
