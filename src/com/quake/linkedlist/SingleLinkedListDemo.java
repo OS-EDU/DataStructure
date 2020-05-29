@@ -23,7 +23,7 @@ public class SingleLinkedListDemo {
         System.out.println("修改之后的结点信息如下：");
         singleLinkedList.del(3);// 删除结点
         HeroNode newHeroNode = new HeroNode(2, "卢员外", "玉麒麟2.0");
-        singleLinkedList.update(newHeroNode);
+        singleLinkedList.update(newHeroNode);// 修改结点信息
         singleLinkedList.show();
 
     }
@@ -158,11 +158,7 @@ class SingleLinkedList {
         }
         //因为头节点不能动，因此我们需要一个辅助变量来遍历
         HeroNode temp = head.next;
-        while (true) {
-            //判断是否到链表最后
-            if (temp == null) {
-                break;
-            }
+        while (temp != null) {// 判断是否到链表最后
             //输出节点的信息
             System.out.println(temp);
             //将temp后移
