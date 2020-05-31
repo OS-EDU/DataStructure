@@ -6,20 +6,25 @@ package com.quake.linkedlist;
  */
 public class DoubleLinkedListDemo {
     public static void main(String[] args) {
-        System.out.println("双向链表的测试");
         // 先创建节点
         HeroNode2 hero1 = new HeroNode2(1, "宋江", "及时雨");
         HeroNode2 hero2 = new HeroNode2(2, "卢俊义", "玉麒麟");
         HeroNode2 hero3 = new HeroNode2(3, "吴用", "智多星");
         HeroNode2 hero4 = new HeroNode2(4, "林冲", "豹子头");
         // 创建一个双向链表
+        System.out.println("原始的双向链表信息如下：");
         DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
         doubleLinkedList.addByOrder(hero3);
         doubleLinkedList.addByOrder(hero1);
         doubleLinkedList.addByOrder(hero2);
         doubleLinkedList.addByOrder(hero4);
-
         doubleLinkedList.show();
+
+        System.out.println("修改之后的双向链表信息如下：");
+        HeroNode2 newHeroNode2 = new HeroNode2(2, "卢员外", "玉麒麟2.0");
+        doubleLinkedList.update(newHeroNode2);
+        doubleLinkedList.show();
+
     }
 }
 
@@ -63,15 +68,44 @@ class DoubleLinkedList {
             temp = temp.next;
         }
         if (flag) {
-            System.out.printf("需要插入的英雄编号%d已存在，添加失败\n",heroNode2.no);
+            System.out.printf("需要插入的英雄编号%d已存在，添加失败\n", heroNode2.no);
         } else {
             heroNode2.pre = temp;// 将新插入的结点指向它的前一个结点
             heroNode2.next = temp.next;// 将新插入的结点指向它的下一个结点
             // 注：如果不是最后一个结点，则不需要执行下面这块代码，否则会出现空指针
-            if (temp.next !=null) {
+            if (temp.next != null) {
                 temp.next.pre = temp;
             }
             temp.next = heroNode2;
+        }
+    }
+
+    // 修改结点信息（可以看待双向链表的结点内容修改和单向链表一样）
+    public void update(HeroNode2 newHeroNode2) {
+        // 判断链表是否为空
+        if (head.next == null) {
+            System.out.println("链表为空~");
+            return;
+        }
+        // 找到需要修改的结点，根据no编号
+        HeroNode2 temp = head.next;// 定义一个辅助变量
+        boolean flag = false;
+        while (true) {
+            if (temp == null) {
+                break;
+            }
+            if (temp.no == newHeroNode2.no) {// 找到
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        //根据flag判断是否找到需要修改的节点
+        if (flag) {
+            temp.name = newHeroNode2.name;
+            temp.nickname = newHeroNode2.nickname;
+        } else {//没有找到
+            System.out.printf("没有找到 编号%d的节点，不能修改", newHeroNode2.no);
         }
     }
 
