@@ -14,10 +14,10 @@ public class DoubleLinkedListDemo {
         HeroNode2 hero4 = new HeroNode2(4, "林冲", "豹子头");
         // 创建一个双向链表
         DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-        doubleLinkedList.add(hero1);
-        doubleLinkedList.add(hero2);
-        doubleLinkedList.add(hero3);
-        doubleLinkedList.add(hero4);
+        doubleLinkedList.addByOrder(hero3);
+        doubleLinkedList.addByOrder(hero1);
+        doubleLinkedList.addByOrder(hero2);
+        doubleLinkedList.addByOrder(hero4);
 
         doubleLinkedList.show();
     }
@@ -44,6 +44,35 @@ class DoubleLinkedList {
         // 形成了一个双向链表
         temp.next = heroNode2;
         heroNode2.pre = temp;
+    }
+
+    // 根据编号顺序添加结点
+    public void addByOrder(HeroNode2 heroNode2) {
+        HeroNode2 temp = head;
+        boolean flag = false;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            }
+            if (temp.next.no > heroNode2.no) {
+                break;
+            } else if (temp.next.no == heroNode2.no) {
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (flag) {
+            System.out.printf("需要插入的英雄编号%d已存在，添加失败\n",heroNode2.no);
+        } else {
+            heroNode2.pre = temp;// 将新插入的结点指向它的前一个结点
+            heroNode2.next = temp.next;// 将新插入的结点指向它的下一个结点
+            // 注：如果不是最后一个结点，则不需要执行下面这块代码，否则会出现空指针
+            if (temp.next !=null) {
+                temp.next.pre = temp;
+            }
+            temp.next = heroNode2;
+        }
     }
 
     // 遍历打印输出链表信息
