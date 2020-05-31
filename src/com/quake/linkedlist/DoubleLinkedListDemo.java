@@ -23,7 +23,9 @@ public class DoubleLinkedListDemo {
         System.out.println("修改之后的双向链表信息如下：");
         HeroNode2 newHeroNode2 = new HeroNode2(2, "卢员外", "玉麒麟2.0");
         doubleLinkedList.update(newHeroNode2);
+        doubleLinkedList.del(1);
         doubleLinkedList.show();
+
 
     }
 }
@@ -108,6 +110,43 @@ class DoubleLinkedList {
             System.out.printf("没有找到 编号%d的节点，不能修改", newHeroNode2.no);
         }
     }
+
+    // 从双向链表中删除一个节点,
+    // 说明
+    // 1 对于双向链表，我们可以直接找到要删除的这个节点
+    // 2 找到后，自我删除即可
+    public void del(int no) {
+        // 判断当前链表是否为空
+        if (head.next == null) {// 空链表
+            System.out.println("链表为空，无法删除~");
+            return;
+        }
+        HeroNode2 temp = head.next; // 辅助变量(指针)
+        boolean flag = false; // 标志是否找到待删除节点的
+        while (true) {
+            if (temp == null) { // 已经到链表的最后
+                break;
+            }
+            if (temp.no == no) {
+                // 找到的待删除节点的前一个节点temp
+                flag = true;
+                break;
+            }
+            temp = temp.next; // temp后移，遍历
+        }
+        // 判断flag
+        if (flag) { // 找到
+            // 可以删除
+            temp.pre.next = temp.next;
+            // 如果是最后一个节点，就不需要执行下面这句话，否则出现空指针
+            if (temp.next != null) {
+                temp.next.pre = temp.pre;
+            }
+        } else {
+            System.out.printf("要删除的 %d 节点不存在\n", no);
+        }
+    }
+
 
     // 遍历打印输出链表信息
     public void show() {
