@@ -26,6 +26,24 @@ public class SingleLinkedListDemo {
         singleLinkedList.update(newHeroNode);// 修改结点信息
         singleLinkedList.show();
 
+        // 测试getLength方法
+        System.out.println("该链表的有效结点个数是：" + getLength(singleLinkedList.getHead()));
+
+    }
+
+    // 获取单链表的有效结点（如果是带头结点的，需要不统计头结点的信息）
+    // head链表的头结点，返回的就是有效结点的个数
+    public static int getLength(HeroNode head) {
+        if (head.next == null) {// 链表为空
+            return 0;
+        }
+        int length = 0;
+        HeroNode cur = head.next;// 定义一个辅助变量
+        while (cur != null) {
+            length++;
+            cur = cur.next;
+        }
+        return length;
     }
 }
 
@@ -166,6 +184,7 @@ class SingleLinkedList {
         }
     }
 }
+
 // 定义HeroNode，每个HeroNode对象就是一个结点
 class HeroNode {
     public int no;// 编号
