@@ -32,6 +32,10 @@ public class SingleLinkedListDemo {
         System.out.println("测试findLastIndexNode方法");
         HeroNode res = findLastIndexNode(singleLinkedList.getHead(), 2);
         System.out.println("res = " + res);
+
+        System.out.println("测试reversList方法");
+        reverseList(singleLinkedList.getHead());
+        singleLinkedList.show();
     }
 
     // 获取单链表的有效结点（如果是带头结点的，需要不统计头结点的信息）
@@ -76,6 +80,32 @@ public class SingleLinkedListDemo {
             cur = cur.next;
         }
         return cur;
+    }
+
+    // 将单链表反转
+    /*
+    思路：
+        1、先定义一个结点 reverseHead = new HeroNode();
+        2、从头到尾遍历原来的链表，每遍历一个结点，将其取出，并放在新的链表reverseHead的最前端
+        3、原来的链表的 head.next = reverseHead.next;
+     */
+    public static void reverseList(HeroNode head) {
+        // 如果当前链表为空，或者只有一个结点，无需反转，直接返回
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        HeroNode cur = head.next;// 定义一个辅助变量，帮助遍历原来的链表
+        HeroNode next = null;// 指向当前结点[cur]的下一个结点
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        // 遍历原来的链表，每遍历一个结点，将其取出，并放在新的链表reverseHead的最前端
+        while (cur != null) {
+            next = cur.next;// 先暂时保存当前结点的下一个结点，
+            cur.next = reverseHead.next;;// 将cur的下一个结点指向新的链表的最前端
+            reverseHead.next = cur;// 将cur连接到新的链表上
+            cur = next;// 让cur后移
+        }
+        // 将 head.next 指向 reverseHead.next，实现单链表的反转
+        head.next = reverseHead.next;
     }
 }
 
