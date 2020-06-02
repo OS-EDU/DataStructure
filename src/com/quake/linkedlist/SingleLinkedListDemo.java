@@ -100,14 +100,14 @@ public class SingleLinkedListDemo {
             return;
         }
         HeroNode cur = head.next;// 定义一个辅助变量，帮助遍历原来的链表
-        HeroNode next = null;// 指向当前结点[cur]的下一个结点
+        HeroNode nextNode = null;// 指向当前结点[cur]的下一个结点
         HeroNode reverseHead = new HeroNode(0, "", "");
         // 遍历原来的链表，每遍历一个结点，将其取出，并放在新的链表reverseHead的最前端
         while (cur != null) {
-            next = cur.next;// 先暂时保存当前结点的下一个结点，
+            nextNode = cur.next;// 先暂时保存当前结点的下一个结点，
             cur.next = reverseHead.next;;// 将cur的下一个结点指向新的链表的最前端
             reverseHead.next = cur;// 将cur连接到新的链表上
-            cur = next;// 让cur后移
+            cur = nextNode;// 让cur后移
         }
         // 将 head.next 指向 reverseHead.next，实现单链表的反转
         head.next = reverseHead.next;
