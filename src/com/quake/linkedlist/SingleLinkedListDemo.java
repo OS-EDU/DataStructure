@@ -196,8 +196,8 @@ class SingleLinkedList {
         }
     }
 
-    //修改节点的信息，根据num编号来修改，即num编号不能改
-    //1、根据newHeroNode的num来修改即可
+    //修改节点的信息，根据no编号来修改，即no编号不能改
+    //1、根据newHeroNode的no来修改即可
     public void update(HeroNode newHeroNode) {
         //判断是否为空
         if (head.next == null) {
@@ -217,7 +217,7 @@ class SingleLinkedList {
             }
             temp = temp.next;
         }
-        //3、根据flga，判断是否找到需要修改的节点
+        //3、根据flag，判断是否找到需要修改的节点
         if (flag) {
             temp.name = newHeroNode.name;
             temp.nickname = newHeroNode.nickname;
@@ -230,16 +230,16 @@ class SingleLinkedList {
     /*
      * 思路：
      * 1、head不能动，因此需要一个temp的节点找到待删除节点的前一个节点
-     * 2、说明在比较时，是temp.next,num和需要删除的节点的no进行比较
+     * 2、说明在比较时，是temp.next,no和需要删除的节点的no进行比较
      * */
-    public void del(int num) {
+    public void del(int no) {
         HeroNode temp = head;
         boolean flag = false;//标志是否找到待删除节点
         while (true) {
             if (temp.next == null) {
                 break;//已经到链表的最后
             }
-            if (temp.next.no == num) {//找到待删除节点的前一个节点temp
+            if (temp.next.no == no) {//找到待删除节点的前一个节点temp
                 flag = true;
                 break;
             }
@@ -250,7 +250,7 @@ class SingleLinkedList {
             //可以删除
             temp.next = temp.next.next;
         } else {
-            System.out.printf("需要删除的%d节点不存在\n", num);
+            System.out.printf("需要删除的%d节点不存在\n", no);
         }
     }
 
