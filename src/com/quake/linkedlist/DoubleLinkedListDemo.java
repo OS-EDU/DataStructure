@@ -45,7 +45,7 @@ class DoubleLinkedList {
             // 如果没有找到将temp后移
             temp = temp.next;// 后移
         }
-        // 当退相互while循环时，temp就指向了链表的最后
+        // 当退出while循环时，temp就指向了链表的最后
         // 形成了一个双向链表
         temp.next = heroNode2;
         heroNode2.pre = temp;
