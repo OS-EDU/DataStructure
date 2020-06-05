@@ -158,7 +158,7 @@ class DoubleLinkedList {
         if (flag) { // 找到
             // 可以删除
             temp.pre.next = temp.next;
-            // 如果是最后一个节点，就不需要执行下面这句话，否则出现空指针
+            // 如果是最后一个结点，就不需要执行下面这句话，否则出现空指针
             if (temp.next != null) {
                 temp.next.pre = temp.pre;
             }
