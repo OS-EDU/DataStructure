@@ -4,5 +4,6 @@
 ---
 
 [一、稀疏数组](https://quakewang.github.io/post/sparsearray/)
+
 [二、数组模拟队列](https://quakewang.github.io/posts/arrayqueue/)
 
