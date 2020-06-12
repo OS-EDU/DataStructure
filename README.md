@@ -7,3 +7,5 @@
 
 [二、数组模拟队列](https://quakewang.github.io/posts/arrayqueue/)
 
+[三、数组模拟环形队列](https://quakewang.github.io/posts/circlearrayqueue/)
+
