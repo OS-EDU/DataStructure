@@ -12,3 +12,5 @@
 [四、单向链表](https://quakewang.github.io/posts/singlelinkedlist/)
 
 [五、单链表的使用](https://quakewang.github.io/posts/%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BD%BF%E7%94%A8/)
+
+[六、双向链表](https://quakewang.github.io/posts/doublelinkedlist/)
