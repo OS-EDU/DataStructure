@@ -75,7 +75,7 @@ class CircleSingleLinkedList {
         }
         // 创建一个辅助指针，帮组完成小孩出圈
         Boy helper = first;
-        //需要创建一个辅助指针（变量）helper，事先应该指向环形链表的最后这个节点
+        //需要创建一个辅助指针（变量）helper，事先应该指向环形链表的最后这结点
         while (true) {
             if (helper.getNext() == first) {// 说明helper指向最后小孩结点
                 break;
