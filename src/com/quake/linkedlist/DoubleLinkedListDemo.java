@@ -37,7 +37,7 @@ class DoubleLinkedList {
     public void add(HeroNode2 heroNode2) {
         // 因为head结点不能动，因此我们需要添加一个辅助变量temp
         HeroNode2 temp = head;
-        // 遍历链表，知=找到链表的最后
+        // 遍历链表，找到链表的最后
         while (true) {
             if (temp.next == null) {// 遍历到链表的最后
                 break;
@@ -88,7 +88,7 @@ class DoubleLinkedList {
                 temp.next = heroNode2;
                 heroNode2.pre = temp ;
                 break ;
-            }else if (temp.next.no > heroNode2.no){//表示找到了插入点
+            }else if (temp.next.no > heroNode2.no){// 表示找到了插入点
                 heroNode2.next = temp.next ;
                 heroNode2.pre = temp;
                 temp.next.pre = heroNode2 ;
@@ -122,7 +122,7 @@ class DoubleLinkedList {
             }
             temp = temp.next;
         }
-        //根据flag判断是否找到需要修改的节点
+        //根据flag判断是否找到需要修改的结点
         if (flag) {
             temp.name = newHeroNode2.name;
             temp.nickname = newHeroNode2.nickname;
@@ -131,9 +131,9 @@ class DoubleLinkedList {
         }
     }
 
-    // 从双向链表中删除一个节点,
+    // 从双向链表中删除一个结点
     // 说明
-    // 1 对于双向链表，我们可以直接找到要删除的这个节点
+    // 1 对于双向链表，我们可以直接找到要删除的这个结点
     // 2 找到后，自我删除即可
     public void del(int no) {
         // 判断当前链表是否为空
@@ -163,7 +163,7 @@ class DoubleLinkedList {
                 temp.next.pre = temp.pre;
             }
         } else {
-            System.out.printf("要删除的 %d 节点不存在\n", no);
+            System.out.printf("要删除的 %d 结点不存在\n", no);
         }
     }
 
@@ -189,7 +189,7 @@ class DoubleLinkedList {
     }
 }
 
-// 定义HeroNode2，每个HeroNode2对象就是一个对象
+// 定义HeroNode2，每个HeroNode2对象就是一个结点
 class HeroNode2 {
     public int no;
     public String name;
