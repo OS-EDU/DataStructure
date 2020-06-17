@@ -19,4 +19,10 @@ class ArrayStack {
         stack = new int[this.maxSize];
     }
 
+    // 栈满
+    public boolean isFull() {
+        return top == maxSize -1;
+    }
+
+
 }
