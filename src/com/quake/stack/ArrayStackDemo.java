@@ -28,4 +28,15 @@ class ArrayStack {
     public boolean isEmpty() {
         return top == -1;
     }
+
+    // 入栈——push
+    public void push(int value) {
+        // 先判断栈是否未满
+        if (isFull()) {
+            System.out.println("栈满");
+            return;
+        }
+        top++;
+        stack[top] = value;
+    }
 }
