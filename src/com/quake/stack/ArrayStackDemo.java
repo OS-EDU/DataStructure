@@ -24,5 +24,8 @@ class ArrayStack {
         return top == maxSize -1;
     }
 
-
+    // 栈空
+    public boolean isEmpty() {
+        return top == -1;
+    }
 }
