@@ -39,4 +39,14 @@ class ArrayStack {
         top++;
         stack[top] = value;
     }
+
+    // 出栈——pop
+    public int pop() {
+        if (isEmpty()) {
+            throw new RuntimeException("栈空，没有数据~~~");
+        }
+        int value = stack[top];
+        top--;
+        return value;
+    }
 }
