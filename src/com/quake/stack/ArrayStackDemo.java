@@ -1,10 +1,51 @@
 package com.quake.stack;
 
+import java.util.Scanner;
 /**
  * @author AKA二夕
  * @create 2020-06-17 14:01
  */
 public class ArrayStackDemo {
+    public static void main(String[] args) {
+        ArrayStack arrayStack = new ArrayStack(3);
+        String key = "";// 接收用户输入的指令
+        boolean loop = true;// 控制是否退出菜单
+        Scanner scanner = new Scanner(System.in);
+
+        while (loop) {
+            System.out.println("show：表示显示栈");
+            System.out.println("exit：退出程序");
+            System.out.println("push：添加数据到栈中（入栈）");
+            System.out.println("pop：从栈中取出数据（出栈）");
+            System.out.println("请输入您的选择：");
+            key = scanner.next();
+            switch (key) {
+                case "show":
+                    arrayStack.show();
+                    break;
+                case "push":
+                    System.out.println("请输入一个数：");
+                    int value = scanner.nextInt();
+                    arrayStack.push(value);
+                    break;
+                case "pop":
+                    try {
+                        int res = arrayStack.pop();
+                        System.out.println("出栈的数据是：" + res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case "exit":
+                    scanner.close();
+                    loop = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+        System.out.println("退出程序~~~");
+    }
 }
 
 // 定义一个ArrayStack表示栈
