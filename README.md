@@ -16,3 +16,5 @@
 [六、双向链表](https://quakewang.github.io/posts/doublelinkedlist/)
 
 [七、约瑟夫环](https://quakewang.github.io/tech/circlelinkedlistdemo/)
+
+[八、数组模拟栈](https://quakewang.github.io/tech/arraystackdemo/)
