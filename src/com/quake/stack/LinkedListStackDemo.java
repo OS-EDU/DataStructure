@@ -47,6 +47,19 @@ class LinkedListStack {
         size--;
         return retValue;
     }
+
+    // 显示栈中信息
+    public void show() {
+        if (isEmpty()) {
+            System.out.println("链栈为空~~");
+            return;
+        }
+        StackNode temp = top;
+        if (temp != null) {
+            System.out.println(temp);
+            temp = temp.next;
+        }
+    }
 }
 
 // 定义一个类表示结点
