@@ -17,6 +17,16 @@ class LinkedListStack {
         top = null;
         size = 0;
     }
+
+    // 判断链栈是否为空
+    public boolean isEmpty() {
+        return top == null;
+    }
+
+    // 获取size的大小
+    public int getSize() {
+        return size;
+    }
 }
 
 // 定义一个类表示结点
