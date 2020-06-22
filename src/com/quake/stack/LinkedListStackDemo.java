@@ -5,6 +5,26 @@ package com.quake.stack;
  * @create 2020-06-22 19:38
  */
 public class LinkedListStackDemo {
+    public static void main(String[] args) {
+        StackNode node1 = new StackNode(1);
+        StackNode node2 = new StackNode(2);
+        StackNode node3 = new StackNode(3);
+        StackNode node4 = new StackNode(4);
+        LinkedListStack linkedListStack = new LinkedListStack();
+        System.out.println("原始的链栈信息如下：");
+        linkedListStack.push(node1);
+        linkedListStack.push(node2);
+        linkedListStack.push(node3);
+        linkedListStack.push(node4);
+        linkedListStack.show();
+        System.out.println("有效的结点个数为："+linkedListStack.getSize());
+
+        System.out.println("修改之后的链栈信息如下：");
+        linkedListStack.pop();
+        linkedListStack.pop();
+        linkedListStack.show();
+        System.out.println("有效的结点个数为："+linkedListStack.getSize());
+    }
 }
 
 // 定义一个类用于管理结点
@@ -13,7 +33,7 @@ class LinkedListStack {
     private int size;
 
     // 初始化
-    private LinkedListStack() {
+    public LinkedListStack() {
         top = null;
         size = 0;
     }
@@ -55,7 +75,7 @@ class LinkedListStack {
             return;
         }
         StackNode temp = top;
-        if (temp != null) {
+        while (temp != null) {
             System.out.println(temp);
             temp = temp.next;
         }
