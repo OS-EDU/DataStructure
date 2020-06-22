@@ -34,6 +34,19 @@ class LinkedListStack {
         top = stackNode;
         size++;
     }
+
+    // 出栈 —— pop
+    public int pop() {
+        if (isEmpty()) {
+            throw new RuntimeException("链栈为空~~");
+        }
+        StackNode temp = top;// 辅助变量
+        top = temp.next;
+        int retValue = temp.data;// 定义一个临时变量，用于保存栈顶元素
+        temp = null;// 将temp置空
+        size--;
+        return retValue;
+    }
 }
 
 // 定义一个类表示结点
