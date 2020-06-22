@@ -7,6 +7,18 @@ package com.quake.stack;
 public class LinkedListStackDemo {
 }
 
+// 定义一个类用于管理结点
+class LinkedListStack {
+    private StackNode top = new StackNode(0);// 定义一个头结点，表示栈顶
+    private int size;
+
+    // 初始化
+    private LinkedListStack() {
+        top = null;
+        size = 0;
+    }
+}
+
 // 定义一个类表示结点
 class StackNode {
     public int data;// data域用于存储数据
