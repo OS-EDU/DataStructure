@@ -27,6 +27,13 @@ class LinkedListStack {
     public int getSize() {
         return size;
     }
+
+    // 入栈 —— push
+    public void push(StackNode stackNode) {
+        stackNode.next = top;
+        top = stackNode;
+        size++;
+    }
 }
 
 // 定义一个类表示结点
