@@ -17,13 +17,12 @@ public class LinkedListStackDemo {
         linkedListStack.push(node3);
         linkedListStack.push(node4);
         linkedListStack.show();
-        System.out.println("有效的结点个数为："+linkedListStack.getSize());
+        System.out.println("有效的结点个数为：" + linkedListStack.getSize());
 
+        System.out.println("出栈的元素为：" + linkedListStack.pop());
         System.out.println("修改之后的链栈信息如下：");
-        linkedListStack.pop();
-        linkedListStack.pop();
         linkedListStack.show();
-        System.out.println("有效的结点个数为："+linkedListStack.getSize());
+        System.out.println("有效的结点个数为：" + linkedListStack.getSize());
     }
 }
 
