@@ -29,7 +29,7 @@ public class LinkedListStackDemo {
 
 // 定义一个类用于管理结点
 class LinkedListStack {
-    private StackNode top = new StackNode(0);// 定义一个头结点，表示栈顶
+    private StackNode top = null;// 定义一个头结点，表示栈顶
     private int size;
 
     // 初始化
