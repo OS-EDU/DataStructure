@@ -70,4 +70,26 @@ class ArrayStack2 {
             return -1;// 假定目前表达式的运算符只有+、-、*、/
         }
     }
+
+    // 计算方法
+    public int cal(int num1, int num2, char oper) {
+        int res = 0;// res用于存放计算的结果
+        switch (oper) {
+            case '+':
+                res = num1 + num2;
+                break;
+            case '-':
+                res = num2 - num1;
+                break;
+            case '*':
+                res = num2 * num1;
+                break;
+            case '/':
+                res = num2 / num1;
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
 }
