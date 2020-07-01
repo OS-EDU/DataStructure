@@ -53,4 +53,16 @@ class ArrayStack2 {
     public int peek() {
         return stack[top];
     }
+
+    // 返回运算符的优先级，优先级是由程序猿来确定的，使用数字表示
+    // 这里规定：优先级越高，返回的数字越大
+    public int priority(char oper) {
+        if (oper == '*' || oper == '/') {
+            return 1;
+        } else if (oper == '+' || oper == '-') {
+            return 0;
+        } else {
+            return -1;// 假定目前表达式的运算符只有+、-、*、/
+        }
+    }
 }
