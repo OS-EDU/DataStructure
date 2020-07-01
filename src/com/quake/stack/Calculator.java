@@ -48,4 +48,9 @@ class ArrayStack2 {
         top--;
         return value;
     }
+
+    // 增加一个方法，可以返回当前栈顶的值，但不是真正的top
+    public int peek() {
+        return stack[top];
+    }
 }
