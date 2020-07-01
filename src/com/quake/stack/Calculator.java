@@ -54,6 +54,11 @@ class ArrayStack2 {
         return stack[top];
     }
 
+    // 判断是否是运算符
+    public boolean isOper(char val) {
+        return val == '+' || val == '-' || val == '*' || val == '/';
+    }
+
     // 返回运算符的优先级，优先级是由程序猿来确定的，使用数字表示
     // 这里规定：优先级越高，返回的数字越大
     public int priority(char oper) {
