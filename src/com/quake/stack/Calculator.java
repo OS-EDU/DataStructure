@@ -5,6 +5,22 @@ package com.quake.stack;
  * @create 2020-07-01 16:01
  */
 public class Calculator {
+    public static void main(String[] args) {
+        String expression = "7*21*2-5+1-5+3-4+2/1";
+        // 创建两个栈，一个数栈，一个符号栈
+        ArrayStack2 numStack = new ArrayStack2(100);
+        ArrayStack2 operStack = new ArrayStack2(100);
+        // 定义所需的相关变量
+        int index = 0;// 用于扫描
+        int num1 = 0;
+        int num2 = 0;
+        char oper = 0;
+        int res = 0;
+        char ch = ' ';// 将每次扫描得到的运算符保存到ch
+        String keepNum = "";// 用于拼接多位数
+
+
+    }
 }
 
 // 定义一个ArrayStack2 表示栈
