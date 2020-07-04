@@ -17,7 +17,7 @@ public class Calculator {
         char oper = 0;
         int res = 0;
         char ch = ' ';//将每次扫面得到的运算符保存到ch
-        String keepNum = "";//用于拼接 多位数
+        String keepNum = "";//用于拼接,处理扫描到的数字是多位数
         //开始whil循环的扫描expression
         while (true) {
             //依次得到expression的每一个字符
