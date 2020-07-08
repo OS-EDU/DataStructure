@@ -20,3 +20,5 @@
 [八、数组模拟栈](https://quakewang.github.io/tech/arraystackdemo/)
 
 [九、单链表模拟栈](https://quakewang.github.io/tech/linkedliststackdemo/)
+
+[十、栈的应用——中缀表达式](https://quakewang.github.io/tech/calculator/)
