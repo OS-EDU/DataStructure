@@ -9,6 +9,13 @@ import java.util.Stack;
  * @create 2020-07-13 16:05
  */
 public class PolandNotation {
+    public static void main(String[] args) {
+        String suffixExpression = "30 4 + 5 * 6 -";
+        List<String> list = getListString(suffixExpression);
+        System.out.println("rpnList =" + list);
+        int res = calculate(list);
+        System.out.println("计算结果是：" + res);
+    }
 
     // 依次将一个逆波兰表达式的数据和运算符放入到ArrayList中
     public static List<String> getListString(String suffixExpression) {
