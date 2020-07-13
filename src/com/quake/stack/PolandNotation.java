@@ -10,11 +10,22 @@ import java.util.Stack;
  */
 public class PolandNotation {
     public static void main(String[] args) {
+        /*
         String suffixExpression = "30 4 + 5 * 6 -";
         List<String> list = getListString(suffixExpression);
         System.out.println("rpnList =" + list);
         int res = calculate(list);
         System.out.println("计算结果是：" + res);
+         */
+
+        String expression = "1+((2+3)*4)-5";
+        List<String> infixExpressionList = toInfixExpressionList(expression);
+        System.out.println("中缀表达式对应的List= " + infixExpressionList);
+        List<String> suffixExpressionList = parseSuffixExpressionList(infixExpressionList);
+        System.out.println("后缀表达式对应的List=" + suffixExpressionList);
+
+        System.out.printf("expression = %d", calculate(suffixExpressionList));
+
     }
 
     // 将得到的中缀表达式对应的List转换成后缀表达式对应的List
@@ -63,7 +74,7 @@ public class PolandNotation {
         do {
             // 如果是一个非数字，就需要加入到ls
             if ((c = s.charAt(i)) < 48 || (c = s.charAt(i)) > 57) {
-                ls.add("" + s);
+                ls.add("" + c);
                 i++;// i需要后移
             } else {// 如果是一个数，需要考虑多位数的情况
                 str = "";// 先将str置空“ ”
