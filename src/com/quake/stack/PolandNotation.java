@@ -17,6 +17,41 @@ public class PolandNotation {
         System.out.println("计算结果是：" + res);
     }
 
+    // 将得到的中缀表达式对应的List转换成后缀表达式对应的List
+    public static List<String> parseSuffixExpressionList(List<String> ls) {
+        // 定义一个栈，用于存放扫描所得到的符号
+        Stack<String> s1 = new Stack<>();// 符号栈
+        // 定义一个ArrayList用于存储中间的结果
+        List<String> s2 = new ArrayList<>();
+
+        // 遍历
+        for (String item : ls) {
+            // 如果是一个数，加入s2
+            if (item.matches("\\d+")) {
+                s2.add(item);
+            } else if (item.equals("(")) {
+                s1.push(item);
+            } else if (item.equals(")")) {
+                // 如果是右括号")"，则依次pop出s1栈顶的运算符，并加入s2，直到遇见左括号为止，此时将这一对括号丢弃
+                while (!s1.peek().equals("(")) {
+                    s2.add(s1.pop());
+                }
+                s1.pop();// 将 ( 弹出s1栈，消除小括号
+            } else {
+                // 当item的优先级小于或等于s1栈顶运算符，将s1栈顶的运算符弹出，并加入到s2中然后再与s1中新的栈顶运算符相比较
+                while (s1.size() != 0 && Operation.getValue(s1.peek()) >= Operation.getValue(item)) {
+                    s2.add(s1.pop());
+                }
+                s1.push(item);
+            }
+        }
+
+        // 将s1中剩余的运算符依次弹出并加入到s2
+        while (s1.size() != 0) {
+            s2.add(s1.pop());
+        }
+        return s2;// 注意：因为是存放到List，因此按顺序输出就是对应后的后缀表达式对应的List
+    }
 
     // 将中缀表达式转换成对应的List
     public static List<String> toInfixExpressionList(String s) {
