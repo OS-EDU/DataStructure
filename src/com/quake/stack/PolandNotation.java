@@ -17,6 +17,31 @@ public class PolandNotation {
         System.out.println("计算结果是：" + res);
     }
 
+
+    // 将中缀表达式转换成对应的List
+    public static List<String> toInfixExpressionList(String s) {
+        // 定义一个List，存放在中缀表达式中对应的内容
+        List<String> ls = new ArrayList<>();
+        int i = 0;// 这是一个指针，用于遍历中缀表达式字符串
+        String str;// 用于多位数的拼接
+        char c;// 每遍历一个字符，就放入到c
+        do {
+            // 如果是一个非数字，就需要加入到ls
+            if ((c = s.charAt(i)) < 48 || (c = s.charAt(i)) > 57) {
+                ls.add("" + s);
+                i++;// i需要后移
+            } else {// 如果是一个数，需要考虑多位数的情况
+                str = "";// 先将str置空“ ”
+                while (i < s.length() && (c = s.charAt(i)) >= 48 && (c = s.charAt(i)) <= 57) {
+                    str += c;
+                    i++;
+                }
+                ls.add(str);
+            }
+        } while (i < s.length());
+        return ls;// 返回
+    }
+
     // 依次将一个逆波兰表达式的数据和运算符放入到ArrayList中
     public static List<String> getListString(String suffixExpression) {
         // 将suffixExpression按照空格“ ”分开
