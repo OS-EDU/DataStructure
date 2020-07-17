@@ -20,6 +20,10 @@ public class MiGong {
             map[i][6] = 1;
         }
 
+        // 设置挡板
+        map[3][1] = 1;
+        map[3][2] = 1;
+
         // 输出地图
         System.out.println("地图的情况：");
         for (int i = 0; i < 8; i++) {
