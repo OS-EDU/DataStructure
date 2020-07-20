@@ -24,3 +24,5 @@
 [十、栈的应用——中缀表达式](https://quakewang.github.io/tech/calculator/)
 
 [十一、栈的应用——后缀表达式01](https://quakewang.github.io/tech/polandnotation01/)
+
+[十二、栈的应用——后缀表达式02](https://quakewang.github.io/tech/polandnotation02/)
