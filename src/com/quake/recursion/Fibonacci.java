@@ -9,14 +9,17 @@ public class Fibonacci {
         int[] a = new int[13];
         a[0] = 0;
         a[1] = 1;
+        System.out.println("未使用递归计算：");
         System.out.println("a[0] = " + a[0]);
         System.out.println("a[1] = " + a[1]);
         for (int i = 2; i < a.length; i++) {
             a[i] = a[i - 1] + a[i - 2];
-            System.out.println(a[i]);
+            System.out.printf("第%d个月兔子总数为：%d", i, a[i]);
+            System.out.println();
         }
 
         // 使用递归计算
+        System.out.println("使用递归计算如下：");
         for (int i = 0; i < a.length; i++) {
             System.out.printf("第%d个月兔子总数为：%d", i, Fbi(i));
             System.out.println();
