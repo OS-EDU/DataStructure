@@ -15,5 +15,20 @@ public class Fibonacci {
             a[i] = a[i - 1] + a[i - 2];
             System.out.println(a[i]);
         }
+
+        // 使用递归计算
+        for (int i = 0; i < a.length; i++) {
+            System.out.printf("第%d个月兔子总数为：%d", i, Fbi(i));
+            System.out.println();
+        }
+    }
+
+    // 使用递归的方法处理
+    public static int Fbi(int i) {
+        if (i < 2) {
+            return i == 0 ? 0 : 1;
+        } else {
+            return Fbi(i - 1) + Fbi(i - 2);
+        }
     }
 }
