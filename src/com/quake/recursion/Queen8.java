@@ -12,6 +12,25 @@ public class Queen8 {
     static int count;// 统计解法
     static int judgeCount;// 统计回溯的次数
 
+    // 方法：放置第n个皇后
+    // 特别注意：check是每一次递归时，进入到check中都有for(int i = 0; i < max; i++)，因此会有回溯
+    private void check(int n) {
+        if (n == max) {// n = 8 时，表示8个皇后已经全部安放好
+            print();
+            return;
+        }
+        // 依次放入皇后，并判断是否冲突
+        for (int i = 0; i < max; i++) {
+            // 先把当前和这做个皇后n，放到该行的第1列
+            array[n] = i;
+            // 判断当放置第n个皇后到i列时，是否冲突
+            if (judge(n)) {// 不冲突
+                check(n + 1);
+            }
+            //如果冲突，就继续执行array[n] = i;即将第n个皇后放置在本行的后移的一个位置
+        }
+    }
+
     // 查看当放置第n个皇后，检测该皇后是否和前面已经摆放的皇后冲突
 
     /**
