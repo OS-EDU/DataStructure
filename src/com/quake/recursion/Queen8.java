@@ -12,6 +12,13 @@ public class Queen8 {
     static int count;// 统计解法
     static int judgeCount;// 统计回溯的次数
 
+    public static void main(String[] args) {
+        Queen8 queen8 = new Queen8();
+        queen8.check(0);
+        System.out.printf("一共有%d种解法",count);
+        System.out.printf("一共判断冲突的次数%d次",judgeCount);
+    }
+
     // 方法：放置第n个皇后
     // 特别注意：check是每一次递归时，进入到check中都有for(int i = 0; i < max; i++)，因此会有回溯
     private void check(int n) {
