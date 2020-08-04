@@ -14,6 +14,12 @@ public class BubbleSort {
         bubbleSort(str);
         System.out.print("排序之后的数组是：");
         System.out.println(Arrays.toString(str));
+
+        int[] arr = new int[80000];
+        for (int i = 0; i < arr.length; i++) {
+            // 随机生成80000个数字
+            arr[i] = (int)(Math.random() * 8000000);
+        }
     }
 
 
