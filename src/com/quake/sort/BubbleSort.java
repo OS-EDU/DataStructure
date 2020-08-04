@@ -1,6 +1,8 @@
 package com.quake.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author AKA二夕
@@ -20,6 +22,18 @@ public class BubbleSort {
             // 随机生成80000个数字
             arr[i] = (int)(Math.random() * 8000000);
         }
+
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(date1);
+        System.out.println("排序前的时间是："+date1Str);
+
+        //测试冒泡排序
+        bubbleSort(arr);
+
+        Date date2 = new Date();
+        String dateStr2 = simpleDateFormat.format(date2);
+        System.out.println("排序后的时间是："+dateStr2);
     }
 
 
