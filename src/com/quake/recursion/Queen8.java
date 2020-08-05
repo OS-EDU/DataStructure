@@ -49,7 +49,7 @@ public class Queen8 {
         for (int i = 0; i < n; i++) {
             /*
             说明：
-                1、array[i] == array[n] 示判断第n个皇后是否和前面的n-1个皇后在同一列
+                1、array[i] == array[n] 表示判断第n个皇后是否和前面的n-1个皇后在同一列
                 2、Math.abs(n-i) == Math.abs(array[n] - array[i]) 表示判断第n个皇后是否和第i个皇后在同一斜线
              */
             if (array[i] == array[n] || Math.abs(n - i) == Math.abs(array[n] - array[i])) {
