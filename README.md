@@ -29,4 +29,5 @@
 
 [十三、递归](https://quakewang.github.io/tech/recursion/)
 
-[十四、递归解决迷宫问题](https://quakewang.github.io/tech/migong/)
+[十四、递归的应用——解决迷宫问题](https://quakewang.github.io/tech/migong/)
+
