@@ -32,3 +32,6 @@
 [十四、递归的应用——解决迷宫问题](https://quakewang.github.io/tech/migong/)
 
 [十五、递归的应用——八皇后](https://quakewang.github.io/tech/8queen/)
+
+[十六、排序——冒泡排序](https://quakewang.github.io/tech/bubblesort/)
+
