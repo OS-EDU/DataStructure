@@ -1,6 +1,8 @@
 package com.quake.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author AKA二夕
@@ -17,8 +19,19 @@ public class SelectSort {
 
         int[] str = new int[80000];
         for (int i = 0; i < str.length; i++) {
-            str[i] = (int)(Math.random() * 800000);
+            str[i] = (int) (Math.random() * 800000);
         }
+
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(date1);
+        System.out.println("排序前的时间为：" + date1Str);
+
+        selectSort(str);
+
+        Date date2 = new Date();
+        String date2Str = simpleDateFormat.format(date2);
+        System.out.println("排序之后的时间为：" + date2Str);
     }
 
     public static void selectSort(int[] arr) {
