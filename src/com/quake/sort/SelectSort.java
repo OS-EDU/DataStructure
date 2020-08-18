@@ -44,7 +44,7 @@ public class SelectSort {
                     minIndex = j;// 重置minIndex
                 }
             }
-            // 将最小值，放在arr[0]，即交换
+            // 将最小值，放在arr[i]，即交换
             if (minIndex != i) {
                 arr[minIndex] = arr[i];
                 arr[i] = min;
