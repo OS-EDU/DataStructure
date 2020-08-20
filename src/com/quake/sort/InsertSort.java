@@ -1,10 +1,20 @@
 package com.quake.sort;
 
+import java.util.Arrays;
+
 /**
  * @author AKA二夕
  * @create 2020-08-20 15:16
  */
 public class InsertSort {
+    public static void main(String[] args) {
+        int[] arr = {101, 34, 119, 1, -1, 89};
+        System.out.println("排序之前的数组如下：");
+        System.out.println(Arrays.toString(arr));
+        insertSort(arr);
+        System.out.println("排序之后的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+    }
 
     // 直接插入排序
     public static void insertSort(int[] arr) {
