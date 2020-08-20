@@ -14,6 +14,13 @@ public class InsertSort {
         insertSort(arr);
         System.out.println("排序之后的数组顺序如下：");
         System.out.println(Arrays.toString(arr));
+
+        int[] str = new int[80000];
+        for (int i = 0; i < arr.length; i++) {
+            str[i] = (int) (Math.random() * 8000000);
+        }
+
+
     }
 
     // 直接插入排序
