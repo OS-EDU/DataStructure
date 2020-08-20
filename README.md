@@ -35,3 +35,4 @@
 
 [十六、排序——冒泡排序](https://quakewang.github.io/tech/bubblesort/)
 
+[十七、排序——选择排序](https://quakewang.github.io/tech/selectsort/)
