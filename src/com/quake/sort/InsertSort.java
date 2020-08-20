@@ -1,6 +1,8 @@
 package com.quake.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author AKA二夕
@@ -20,7 +22,14 @@ public class InsertSort {
             str[i] = (int) (Math.random() * 8000000);
         }
 
-
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(date1);
+        System.out.println(date1Str);
+        insertSort(str);
+        Date date2 = new Date();
+        String date2Str = simpleDateFormat.format(date2);
+        System.out.println(date2Str);
     }
 
     // 直接插入排序
