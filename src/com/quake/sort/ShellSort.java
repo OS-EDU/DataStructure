@@ -1,6 +1,8 @@
 package com.quake.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author AKA二夕
@@ -14,6 +16,12 @@ public class ShellSort {
         shellSort01(arr);
         System.out.println("排序之后的数组顺序如下：");
         System.out.println(Arrays.toString(arr));
+
+        int[] str = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            str[i] = (int)(Math.random() * 90000);
+        }
+
     }
 
     // 希尔排序，对有序序列在插入时直接使用交换法
