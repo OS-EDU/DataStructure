@@ -39,7 +39,7 @@ public class ShellSort {
         int temp = 0;// 用于交换
         // 第一层循环，将待排序数组进行分组
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
-            // 第二层循环，遍历分好组的数组
+            // 第二层排序，从第gap个元素，逐个对其所在组进行直接插入排序操作
             for (int i = gap; i < arr.length; i++) {
                 // 第三层循环，遍历各组中所有的元素（共gap组），步长为gap
                 for (int j = i - gap; j >= 0; j -= gap) {
@@ -56,15 +56,19 @@ public class ShellSort {
 
     // 对交换式的希尔排序进行优化 ——> 移位法
     public static void shellSort02(int[] arr) {
+        // 增量gap，并逐步的缩小增量
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            // 从第gap的个元素，逐个对其所在的组进行直接插入排序
             for (int i = gap; i < arr.length; i++) {
                 int j = i;
                 int temp = arr[j];
                 if (arr[j] < arr[j - gap]) {
                     while (j - gap >= 0 && temp < arr[j - gap]) {
+                        // 移动
                         arr[j] = arr[j - gap];
                         j -= gap;
                     }
+                    // 当退出while后，就给temp找到插入的位置
                     arr[j] = temp;
                 }
             }
