@@ -16,12 +16,16 @@ public class ShellSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    // 希尔排序 使用交换法
+    // 希尔排序，对有序序列在插入时直接使用交换法
     public static void shellSort01(int[] arr) {
-        int temp = 0;
+        int temp = 0;// 用于交换
+        // 第一层循环，将待排序数组进行分组
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            // 第二层循环，遍历分好组的数组
             for (int i = gap; i < arr.length; i++) {
+                // 第三层循环，遍历各组中所有的元素（共gap组），步长为gap
                 for (int j = i - gap; j >= 0; j -= gap) {
+                    // 如果当前元素大于加上步长后的那个元素，说明交换
                     if (arr[j] > arr[j + gap]) {
                         temp = arr[j];
                         arr[j] = arr[j + gap];
