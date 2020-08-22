@@ -22,6 +22,16 @@ public class ShellSort {
             str[i] = (int)(Math.random() * 90000);
         }
 
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(date1);
+        System.out.println("排序前的时间为："+date1Str);
+
+        shellSort02(str);
+
+        Date date2 = new Date();
+        String date2Str = simpleDateFormat.format(date2);
+        System.out.println("排序后的时间为："+date2Str);
     }
 
     // 希尔排序，对有序序列在插入时直接使用交换法
