@@ -43,5 +43,10 @@ public class QuickSort {
             }
         }
 
+        // 如果 l == r ， 必须l++、r--，否则会出现栈溢出
+        if (l == r) {
+            l += 1;
+            r -= 1;
+        }
     }
 }
