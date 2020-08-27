@@ -32,6 +32,15 @@ public class QuickSort {
             temp = arr[l];
             arr[l] = arr[r];
             arr[r] = temp;
+
+            // 如果交换完后，发现 arr[l] == pivot值相等，r-- 前移
+            if (arr[l] == pivot) {
+                r -= 1;
+            }
+            // 如果交换完后，发现arr[r] == pivot值相等，l++ 后移
+            if (arr[r] == pivot) {
+                l += 1;
+            }
         }
 
     }
