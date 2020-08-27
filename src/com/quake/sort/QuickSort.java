@@ -48,5 +48,13 @@ public class QuickSort {
             l += 1;
             r -= 1;
         }
+        // 向左递归
+        if (left < r) {
+            quickSort(arr, left, r);
+        }
+        // 向右递归
+        if (right > l) {
+            quickSort(arr, l, right);
+        }
     }
 }
