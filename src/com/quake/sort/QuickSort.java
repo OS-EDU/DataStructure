@@ -27,6 +27,11 @@ public class QuickSort {
             if (l >= r) {
                 break;
             }
+
+            // 交换
+            temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
         }
 
     }
