@@ -38,3 +38,5 @@
 [十七、排序——选择排序](https://quakewang.github.io/tech/selectsort/)
 
 [十八、排序——直接插入排序](https://quakewang.github.io/tech/insertsort/)
+
+[十九、排序——希尔排序](https://quakewang.github.io/tech/shellsort/)
