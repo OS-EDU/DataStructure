@@ -1,10 +1,20 @@
 package com.quake.sort;
 
+import java.util.Arrays;
+
 /**
  * @author AKA二夕
  * @create 2020-08-27 21:11
  */
 public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = {-9, 78, 0, 23, -567, 70, -1, 900, 4561};
+        System.out.println("排序之前的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println("排序之后的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+    }
 
     // 快速排序
     public static void quickSort(int[] arr, int left, int right) {
