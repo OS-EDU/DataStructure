@@ -51,7 +51,7 @@ public class QuickSort {
             while (arr[r] > pivot) {
                 r -= 1;
             }
-            // 如果 l >= r 说明pivot右边的值，已经全部是小于等于pivot值，右边全部是大于等于pivot值
+            // 如果 l >= r 说明pivot左边的值，已经全部是小于等于pivot值，右边全部是大于等于pivot值
             if (l >= r) {
                 break;
             }
