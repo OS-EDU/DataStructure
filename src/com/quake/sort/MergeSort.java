@@ -12,9 +12,9 @@ public class MergeSort {
         int[] temp = new int[arr.length];
         System.out.println("原始的数组顺序如下：");
         System.out.println(Arrays.toString(arr));
-        mergeSort(arr,0,arr.length - 1, temp);
+        mergeSort(arr, 0, arr.length - 1, temp);
         System.out.println("排序之后的数组顺序如下：");
-        System.out.println(Arrays.toString(temp));
+        System.out.println(Arrays.toString(arr));
     }
 
     // 分+合的方法
@@ -41,7 +41,7 @@ public class MergeSort {
      */
     public static void merge(int[] arr, int left, int right, int mid, int[] temp) {
         int i = left;// 初始化i，左边有序序列的初始索引
-        int j = right;// 初始化j，右边有序序列的初始索引
+        int j = mid + 1;// 初始化j，右边有序序列的初始索引
         int t = 0;// 指向temp数组的当前索引
 
         /*
@@ -58,7 +58,7 @@ public class MergeSort {
                 t++;
                 i++;
             } else {// 反之，将右边有序序列的当前元素，填充到temp数组
-                temp[t] = temp[j];
+                temp[t] = arr[j];
                 t++;
                 j++;
             }
