@@ -1,10 +1,21 @@
 package com.quake.sort;
 
+import java.util.Arrays;
+
 /**
  * @author AKA二夕
  * @create 2020-08-31 15:29
  */
 public class MergeSort {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 5, 7, 1, 3, 6, 2};
+        int[] temp = new int[arr.length];
+        System.out.println("原始的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+        mergeSort(arr,0,arr.length - 1, temp);
+        System.out.println("排序之后的数组顺序如下：");
+        System.out.println(Arrays.toString(temp));
+    }
 
     // 分+合的方法
     public static void mergeSort(int[] arr, int left, int right, int[] temp) {
