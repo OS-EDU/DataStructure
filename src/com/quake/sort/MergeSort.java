@@ -67,5 +67,18 @@ public class MergeSort {
             t++;
             j++;
         }
+
+        /*
+            （三）
+            将temp数组的元素拷贝到arr
+            注意：并不是每次都要拷贝所有！！！
+         */
+        t = 0;
+        int tempLeft = left;
+        while (tempLeft <= right) {
+            arr[tempLeft] = temp[t];
+            t++;
+            tempLeft++;
+        }
     }
 }
