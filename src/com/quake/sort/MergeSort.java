@@ -53,5 +53,19 @@ public class MergeSort {
             }
         }
 
+        /*
+            （二）
+            把有剩余数据的一边的数据依次全部填充到temp
+         */
+        while (i <= mid) {// 处理左边有序序列的剩余数据
+            temp[t] = arr[i];
+            t++;
+            i++;
+        }
+        while (j <= right) {// 处理右边有序序列的剩余数据
+            temp[t] = arr[j];
+            t++;
+            j++;
+        }
     }
 }
