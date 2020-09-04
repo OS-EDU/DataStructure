@@ -1,10 +1,20 @@
 package com.quake.sort;
 
+import java.util.Arrays;
+
 /**
  * @author AKA二夕
  * @create 2020-09-04 22:15
  */
 public class RadixSort {
+    public static void main(String[] args) {
+        int[] arr = {53, 3, 542, 748, 14, 214};
+        System.out.println("排序之前的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+        radixSort(arr);
+        System.out.println("排序之后的数组顺序如下：");
+        System.out.println(Arrays.toString(arr));
+    }
 
     // 基数排序方法
     public static void radixSort(int[] arr) {
