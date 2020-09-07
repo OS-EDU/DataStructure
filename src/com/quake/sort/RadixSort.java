@@ -44,12 +44,12 @@ public class RadixSort {
             // 针对各个元素的对应位进行排序处理，第一次是个位，第二次是十位，以此类推
             for (int j = 0; j < arr.length; j++) {
                 // 取出每个元素对应位的值
-                int digitOffElement = arr[j] / n % 10;
+                int digitOfElement = arr[j] / n % 10;
                 // 放入对应的桶中
                 // 比如：53和3 这两个数，所对应的就是bucket[3][2] 表示的意思就是 个位数字为3的桶中有两个数
                 // 其中digitOfElement对应的是3（个位数字），bucketElementCounts[digitOfElement]用于记录对应桶中的个数
-                bucket[digitOffElement][bucketElementCounts[digitOffElement]] = arr[j];
-                bucketElementCounts[digitOffElement]++;
+                bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+                bucketElementCounts[digitOfElement]++;
             }
             //按照这个桶的顺序（一维数组的下标依次取出数据，放入到原来的数组）
             int index = 0;
