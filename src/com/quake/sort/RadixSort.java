@@ -46,6 +46,8 @@ public class RadixSort {
                 // 取出每个元素对应位的值
                 int digitOffElement = arr[j] / n % 10;
                 // 放入对应的桶中
+                // 比如：53和3 这两个数，所对应的就是bucket[3][2] 表示的意思就是 个位数字为3的桶中有两个数
+                // 其中digitOfElement对应的是3（个位数字），bucketElementCounts[digitOfElement]用于记录对应桶中的个数
                 bucket[digitOffElement][bucketElementCounts[digitOffElement]] = arr[j];
                 bucketElementCounts[digitOffElement]++;
             }
