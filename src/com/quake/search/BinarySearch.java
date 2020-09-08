@@ -5,6 +5,11 @@ package com.quake.search;
  * @create 2020-09-08 10:32
  */
 public class BinarySearch {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 45, 67, 88, 198, 198, 198, 245};
+        int i = binarySearch01(arr, 0, arr.length - 1, 198);
+        System.out.println("i = " + i);
+    }
 
     /**
      * @param arr     数组
