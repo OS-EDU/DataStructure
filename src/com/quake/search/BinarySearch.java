@@ -14,6 +14,8 @@ public class BinarySearch {
         System.out.println("i = " + i);
         List<Integer> resIndexList = binarySearch02(arr, 0, arr.length - 1, 198);
         System.out.println("resIndexList = " + resIndexList);
+        int j = binarySearch01(arr, 0, arr.length - 1, 23);
+        System.out.println("i = " + j);
     }
 
     /**
@@ -85,5 +87,22 @@ public class BinarySearch {
             }
             return resIndexList;
         }
+    }
+
+    // 非递归实现折半查找
+    public static int binarySearch03(int[] arr, int left, int right, int findVal) {
+        int mid = 0;
+        int midVal = arr[mid];
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (findVal < midVal) {
+                right = mid - 1;
+            } else if (findVal > midVal) {
+                left = mid + 1;
+            } else {
+                return -1;
+            }
+        }
+        return mid;
     }
 }
