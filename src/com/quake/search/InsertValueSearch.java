@@ -5,6 +5,14 @@ package com.quake.search;
  * @create 2020-09-09 21:08
  */
 public class InsertValueSearch {
+    public static void main(String[] args) {
+        int[] arr = new int[100];
+        for (int i = 0; i < 100; i++) {
+            arr[i] = i + 1;
+        }
+        int index = insertValueSearch(arr, 0, arr.length - 1, 63);
+        System.out.println(index + 1);
+    }
 
     /**
      * 说明：差债查找算法，也要求数组是有序的
