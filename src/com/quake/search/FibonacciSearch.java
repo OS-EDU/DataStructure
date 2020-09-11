@@ -9,6 +9,11 @@ import java.util.Arrays;
 public class FibonacciSearch {
     public static int maxSize = 20;
 
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 8, 10, 1000, 1234, 1335};
+        System.out.println("需要查找的值的index = " + fibSearch(arr, 10));
+    }
+
     // 先获取一段斐波那契数列
     public static int[] fib() {
         int[] f = new int[maxSize];
