@@ -68,4 +68,26 @@ class EmpLinkedList {
         System.out.println();// 换行
     }
 
+    // 根据id查找雇员
+    // 如果查找到，就返回Emp，如果没有找到，就返回null
+    public Emp findEmpById(int id) {
+        // 判断链表是否为空
+        if (head == null) {
+            System.out.println("链表为空");
+            return null;
+        }
+        Emp curEmp = head;// 辅助指针
+        while (true) {
+            if (curEmp.id == id) {// 找到
+                break;// 这时curEmp就指向要查找的雇员
+            }
+            // 退出
+            if (curEmp.next == null) {// 说明遍历当前链表没有找到相关信息
+                curEmp = null;
+                break;
+            }
+            curEmp = curEmp.next;// 依次后移，遍历
+        }
+        return curEmp;
+    }
 }
