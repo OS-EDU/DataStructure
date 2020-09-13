@@ -22,6 +22,12 @@ class HashTab {
             empLinkedListArray[i] = new EmpLinkedList();
         }
     }
+
+
+    //编写散列函数，使用一个简单取模法
+    public int hashFun(int id) {
+        return id % size;
+    }
 }
 
 // 表示一个雇员
