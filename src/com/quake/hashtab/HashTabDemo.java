@@ -90,4 +90,29 @@ class EmpLinkedList {
         }
         return curEmp;
     }
+
+    // 删除雇员
+    public void del(int id) {
+        if (head == null) {
+            System.out.println("链表为空，没有可删除的雇员信息");
+        }
+        boolean flag = false;
+        Emp curEmp = head;
+        while (true) {
+            if (head.id == id) {// 此处与普通单链表有区别，如果头结点就是要找的员工，那么直接删除头结点
+                head = curEmp.next;
+                System.out.println("删除雇员：" + id);
+                break;
+            } else if (curEmp.next.id == id) {// 如果找到将next域指向下下一个对象，那么中间的对象就抛弃了，也就删除
+                curEmp.next = curEmp.next.next;
+                System.out.println("删除雇员：" + id);
+                break;
+            }
+            if (curEmp.next == null) {
+                System.out.println("没有找到该雇员相关信息");
+                break;
+            }
+            curEmp = curEmp.next;
+        }
+    }
 }
