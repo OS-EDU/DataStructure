@@ -31,9 +31,16 @@ class HashTab {
     // 添加雇员
     public void add(Emp emp) {
         // 根据员工的id，得到该员工应当添加到哪条链表
-        int empLinkedListNO= hashFun(emp.id);
+        int empLinkedListNO = hashFun(emp.id);
         // 将emp添加到对应的链表中
         empLinkedListArray[empLinkedListNO].add(emp);
+    }
+
+    // 遍历完所有的链表，遍历hashtab
+    public void show() {
+        for (int i = 0; i < size; i++) {
+            empLinkedListArray[i].show(i);
+        }
     }
 }
 
