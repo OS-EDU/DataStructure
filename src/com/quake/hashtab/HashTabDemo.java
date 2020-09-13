@@ -23,10 +23,17 @@ class HashTab {
         }
     }
 
-
     //编写散列函数，使用一个简单取模法
     public int hashFun(int id) {
         return id % size;
+    }
+
+    // 添加雇员
+    public void add(Emp emp) {
+        // 根据员工的id，得到该员工应当添加到哪条链表
+        int empLinkedListNO= hashFun(emp.id);
+        // 将emp添加到对应的链表中
+        empLinkedListArray[empLinkedListNO].add(emp);
     }
 }
 
