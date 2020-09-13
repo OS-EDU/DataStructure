@@ -1,10 +1,59 @@
 package com.quake.hashtab;
 
+import java.util.Scanner;
+
 /**
  * @author AKA二夕
  * @create 2020-09-13 14:37
  */
 public class HashTabDemo {
+    public static void main(String[] args) {
+        //创建哈希表
+        HashTab hashTab = new HashTab(4);
+
+        //编写一个简单的菜单
+        String key = "";
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("add:添加雇员");
+            System.out.println("show:显示雇员");
+            System.out.println("find:查找雇员");
+            System.out.println("exit:退出系统");
+            System.out.println("delete:删除雇员");
+
+            key = scanner.next();
+            switch (key) {
+                case "add":
+                    System.out.print("输入id：");
+                    int id = scanner.nextInt();
+                    System.out.print("输入姓名：");
+                    String name = scanner.next();
+                    //创建 雇员
+                    Emp emp = new Emp(id, name);
+                    hashTab.add(emp);
+                    break;
+                case "list":
+                    hashTab.show();
+                    break;
+                case "find":
+                    System.out.print("请输入需要查找的id：");
+                    id = scanner.nextInt();
+                    hashTab.findEmpById(id);
+                    break;
+                case "delete":
+                    System.out.print("请输入需要删除的id：");
+                    id = scanner.nextInt();
+                    hashTab.delEmpById(id);
+                    break;
+                case "exit":
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    break;
+            }
+        }
+    }
+
 }
 
 // 创建HashTab 管理多条链表
