@@ -42,6 +42,18 @@ class HashTab {
             empLinkedListArray[i].show(i);
         }
     }
+
+    // 根据输入的id，查找雇员
+    public void findEmpById(int id) {
+        //使用散列函数确定到哪条链条查找
+        int empLinkedListNO = hashFun(id);
+        Emp emp = empLinkedListArray[empLinkedListNO].findEmpById(id);
+        if (emp != null) {//找到
+            System.out.printf("在第%d条链表中找到雇员 id = %d\n", (empLinkedListNO + 1), id);
+        } else {
+            System.out.println("在哈希表中，没有找到该雇员");
+        }
+    }
 }
 
 // 表示一个雇员
