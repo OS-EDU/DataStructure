@@ -19,3 +19,17 @@ class Emp {
         this.name = name;
     }
 }
+
+// 创建EmpLinkedList，表示链表
+class EmpLinkedList {
+    // 头指针，执行第一个Emp。因此这个链表的head是指向第一个Emp
+    private Emp head;// 默认为null
+
+    /*
+    添加雇员到链表：
+        说明：
+           假定，当添加雇员时，id是自增长的，即id的分配总是从小到大
+           因此将雇员直接加入到本链表的最后即可
+     */
+
+}
