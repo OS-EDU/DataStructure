@@ -50,4 +50,22 @@ class EmpLinkedList {
         curEmp.next = emp;
     }
 
+    // 遍历链表的雇员信息
+    public void show(int no) {
+        if (head == null) {// 说明链表为空
+            System.out.println("第 " + (no + 1) + "链表为空");
+            return;
+        }
+        System.out.println("第 " + (no + 1) + "链表为空");
+        Emp curEmp = head;// 辅助指针
+        while (true) {
+            System.out.printf(" => id = %d name = %s\t", curEmp.id, curEmp.name);
+            if (curEmp.next == null) {// 说明curEmp已经是最后的结点
+                break;
+            }
+            curEmp = curEmp.next;// 遍历，后移
+        }
+        System.out.println();// 换行
+    }
+
 }
