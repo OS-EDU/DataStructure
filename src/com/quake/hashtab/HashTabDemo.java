@@ -54,6 +54,13 @@ class HashTab {
             System.out.println("在哈希表中，没有找到该雇员");
         }
     }
+
+    //根据输入的id，删除雇员
+    public void delEmpById(int id) {
+        int empLinkedListNO = hashFun(id);
+        empLinkedListArray[empLinkedListNO].del(id);
+    }
+
 }
 
 // 表示一个雇员
