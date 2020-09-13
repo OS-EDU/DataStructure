@@ -31,5 +31,23 @@ class EmpLinkedList {
            假定，当添加雇员时，id是自增长的，即id的分配总是从小到大
            因此将雇员直接加入到本链表的最后即可
      */
+    public void add(Emp emp) {
+        // 如果是添加第一个雇员
+        if (head == null) {
+            head = emp;
+            return;
+        }
+        // 如果不是第一个雇员，则需要一个辅助指针，帮助定位到最后
+        Emp curEmp = head;
+        while (true) {
+            if (curEmp == null) {// 说明遍历到链表的最后
+                break;
+            }
+            // 后移
+            curEmp = curEmp.next;
+        }
+        // 退出时，直接将emp加入到链表
+        curEmp.next = emp;
+    }
 
 }
