@@ -7,6 +7,23 @@ package com.quake.hashtab;
 public class HashTabDemo {
 }
 
+// 创建HashTab 管理多条链表
+class HashTab {
+    private EmpLinkedList[] empLinkedListArray;
+    private int size;// 表示有多少条链表
+
+    // 构造器
+    public HashTab(int size) {
+        this.size = size;
+        // 初始化empLinkedListArray
+        empLinkedListArray = new EmpLinkedList[size];
+        // 分别初始化每个链表
+        for (int i = 0; i < size; i++) {
+            empLinkedListArray[i] = new EmpLinkedList();
+        }
+    }
+}
+
 // 表示一个雇员
 class Emp {
     public int id;// 编号
