@@ -43,6 +43,8 @@
 
 [二十、排序——快速排序](https://quakewang.github.io/tech/quicksort/)
 
-[二十一、归并排序](https://quakewang.github.io/tech/mergesort/)
+[二十一、排序——归并排序](https://quakewang.github.io/tech/mergesort/)
 
-[二十二、基数排序](https://quakewang.github.io/tech/radixsort/)
+[二十二、排序——基数排序](https://quakewang.github.io/tech/radixsort/)
+
+[二十三、查找——线性查找](https://quakewang.github.io/tech/seqsearch/)
