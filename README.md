@@ -42,3 +42,7 @@
 [十九、排序——希尔排序](https://quakewang.github.io/tech/shellsort/)
 
 [二十、排序——快速排序](https://quakewang.github.io/tech/quicksort/)
+
+[二十一、归并排序](https://quakewang.github.io/tech/mergesort/)
+
+[二十二、基数排序](https://quakewang.github.io/tech/radixsort/)
