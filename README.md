@@ -48,3 +48,5 @@
 [二十二、排序——基数排序](https://quakewang.github.io/tech/radixsort/)
 
 [二十三、查找——线性查找](https://quakewang.github.io/tech/seqsearch/)
+
+[二十四、查找——折半查找](https://quakewang.github.io/tech/binarysearch/)
