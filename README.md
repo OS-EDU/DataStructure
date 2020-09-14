@@ -52,3 +52,5 @@
 [二十四、查找——折半查找](https://quakewang.github.io/tech/binarysearch/)
 
 [二十五、查找——插值查找](https://quakewang.github.io/tech/insertvaluesearch/)
+
+[二十六、查找——斐波那契查找（失败）](https://quakewang.github.io/tech/fibonaccisearch/)
