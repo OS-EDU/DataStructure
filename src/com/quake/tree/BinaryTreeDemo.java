@@ -5,6 +5,38 @@ package com.quake.tree;
  * @create 2020-09-19 21:04
  */
 public class BinaryTreeDemo {
+    public static void main(String[] args) {
+//先创建一颗二叉树
+        BinaryTree binaryTree = new BinaryTree();
+
+        //创建需要的节点
+        HeroNode root = new HeroNode(1, "A");
+        HeroNode node2 = new HeroNode(2, "B");
+        HeroNode node3 = new HeroNode(3, "C");
+        HeroNode node4 = new HeroNode(4, "D");
+        HeroNode node5 = new HeroNode(5, "E");
+        HeroNode node6 = new HeroNode(6, "F");
+        HeroNode node7 = new HeroNode(7, "G");
+        HeroNode node8 = new HeroNode(8, "H");
+
+        //手动创建该该二叉树
+        binaryTree.setRoot(root);
+        root.setLeft(node2);
+        root.setRight(node6);
+        node2.setRight(node3);
+        node3.setRight(node5);
+        node3.setLeft(node4);
+        node6.setRight(node7);
+        node7.setLeft(node8);
+
+        //测试 遍历
+        System.out.println("前序遍历：");
+        binaryTree.preOrder();
+        System.out.println("中序遍历：");
+        binaryTree.infixOrder();
+        System.out.println("后序遍历：");
+        binaryTree.postOrder();
+    }
 }
 
 // 定义BinaryTree 二叉树
