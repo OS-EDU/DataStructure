@@ -18,12 +18,20 @@ class BinaryTree {
     // 前序遍历
     public void preOrder() {
         if (this.root != null) {
-            this.preOrder();
+            this.root.preOrder();
         } else {
             System.out.println("二叉树为空，无法遍历");
         }
     }
 
+    // 中序遍历
+    public void infixOrder() {
+        if (this.root != null) {
+            this.root.infixOrder();
+        } else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
 }
 
 // 先创建HeroNode结点
@@ -88,6 +96,20 @@ class HeroNode {
         // 向右子树前序遍历
         if (this.right != null) {
             this.right.preOrder();
+        }
+    }
+
+    // 中序遍历
+    public void infixOrder() {
+        // 递归向左子树中序遍历
+        if (this.left != null) {
+            this.left.infixOrder();
+        }
+        // 输出父结点
+        System.out.println(this);
+        // 递归向右子树中序遍历
+        if (this.right != null) {
+            this.right.infixOrder();
         }
     }
 }
