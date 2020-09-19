@@ -32,6 +32,15 @@ class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
+
+    // 后序遍历
+    public void postOrder() {
+        if (this.root != null) {
+            this.root.postOrder();
+        } else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
 }
 
 // 先创建HeroNode结点
@@ -111,5 +120,16 @@ class HeroNode {
         if (this.right != null) {
             this.right.infixOrder();
         }
+    }
+
+    // 后序遍历
+    public void postOrder() {
+        if (this.left != null) {
+            this.left.postOrder();
+        }
+        if (this.right != null) {
+            this.right.postOrder();
+        }
+        System.out.println(this);
     }
 }
