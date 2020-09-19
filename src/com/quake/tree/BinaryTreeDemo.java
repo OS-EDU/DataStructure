@@ -14,6 +14,16 @@ class BinaryTree {
     public void setRoot(HeroNode root) {
         this.root = root;
     }
+
+    // 前序遍历
+    public void preOrder() {
+        if (this.root != null) {
+            this.preOrder();
+        } else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+
 }
 
 // 先创建HeroNode结点
@@ -66,5 +76,18 @@ class HeroNode {
                 ", name='" + name + '\'' +
                 ", no=" + no +
                 '}';
+    }
+
+    // 编写前序遍历的方法
+    public void preOrder() {
+        System.out.println(this);// 先输出父结点
+        // 递归向左子树前序遍历
+        if (this.left != null) {
+            this.left.preOrder();
+        }
+        // 向右子树前序遍历
+        if (this.right != null) {
+            this.right.preOrder();
+        }
     }
 }
