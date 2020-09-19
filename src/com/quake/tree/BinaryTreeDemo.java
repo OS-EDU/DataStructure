@@ -4,7 +4,16 @@ package com.quake.tree;
  * @author AKA二夕
  * @create 2020-09-19 21:04
  */
-public class BinaryTree {
+public class BinaryTreeDemo {
+}
+
+// 定义BinaryTree 二叉树
+class BinaryTree {
+    private HeroNode root;// 定义根节点
+
+    public void setRoot(HeroNode root) {
+        this.root = root;
+    }
 }
 
 // 先创建HeroNode结点
