@@ -6,7 +6,7 @@ package com.quake.tree;
  */
 public class BinaryTreeDemo {
     public static void main(String[] args) {
-//先创建一颗二叉树
+        //先创建一颗二叉树
         BinaryTree binaryTree = new BinaryTree();
 
         //创建需要的节点
@@ -36,6 +36,14 @@ public class BinaryTreeDemo {
         binaryTree.infixOrder();
         System.out.println("后序遍历：");
         binaryTree.postOrder();
+
+        //测试 查找
+        System.out.println("前序遍历查找：");
+        HeroNode resNode = binaryTree.infixOrderSearch(4);
+        if (resNode != null) {
+            System.out.printf("找到该节点，信息为 no=%d name=%s", resNode.getNo(), resNode.getName());
+        }
+        System.out.println();
     }
 }
 
