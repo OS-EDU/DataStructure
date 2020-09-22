@@ -73,6 +73,15 @@ class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
+
+    // 前序遍历查找
+    public HeroNode preOrderSearch(int no) {
+        if (root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
 }
 
 // 先创建HeroNode结点
@@ -163,5 +172,32 @@ class HeroNode {
             this.right.postOrder();
         }
         System.out.println(this);
+    }
+
+    /**
+     * 前序遍历查找
+     * @param no 查找no
+     * @return 如果找到就返回该Node，如果没有找到返回null
+     */
+    public HeroNode preOrderSearch(int no) {
+        // 比较当前结点是不是
+        if (this.no == no) {
+            return this;
+        }
+        // 1、判断当前结点的左子结点是否为空，如果不为空，则递归前序查找
+        // 2、如果做递归前序查找，找到结点，则返回
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.preOrderSearch(no);
+        }
+        if (resNode != null) {// 说明左子树找到
+            return resNode;
+        }
+        // 3、左递归前序查找，找到结点，则返回，否则继续判断
+        // 4、当前结点的右子结点是否为空，如果不空，则继续向右递归前序查找
+        if (this.right != null) {
+            resNode = this.right.preOrderSearch(no);
+        }
+        return resNode;
     }
 }
