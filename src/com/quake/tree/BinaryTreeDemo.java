@@ -91,6 +91,16 @@ class BinaryTree {
             return null;
         }
     }
+
+    // 后序遍历查找
+    public HeroNode postOrderSearch(int no) {
+        if (root != null) {
+            return root.postOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+
 }
 
 // 先创建HeroNode结点
@@ -213,7 +223,7 @@ class HeroNode {
 
     // 中序遍历查找
     public HeroNode infixOrderSearch(int no) {
-        // 判当前结点的左子结点是否为空，如果不为空，则递归中序查找
+        // 判断当前结点的左子结点是否为空，如果不为空，则递归中序查找
         HeroNode resNode = null;
         if (this.left != null) {
             resNode = this.left.infixOrderSearch(no);
@@ -228,6 +238,30 @@ class HeroNode {
         // 否则继续进行右递归的中序查找
         if (this.right != null) {
             resNode = this.right.infixOrderSearch(no);
+        }
+        return resNode;
+    }
+
+    // 后序遍历查找
+    public HeroNode postOrderSearch(int no) {
+        HeroNode resNode = null;
+        // 判断当前结点的左子结点是否为空，如果不为空，则递归后序查找
+        if (this.left != null) {
+            resNode = this.left.postOrderSearch(no);
+        }
+        if (resNode != null) {// 说明左子树找到
+            return resNode;
+        }
+        // 如果左子树没有找到，则向右子树递归进行后序遍历查找
+        if (this.right != null) {
+            resNode = this.right.preOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        // 如果左右子树都没有找到，就比较当前结点是不是
+        if (this.no == no) {
+            return this;
         }
         return resNode;
     }
