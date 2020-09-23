@@ -54,3 +54,7 @@
 [二十五、查找——插值查找](https://quakewang.github.io/tech/insertvaluesearch/)
 
 [二十六、查找——斐波那契查找（失败）](https://quakewang.github.io/tech/fibonaccisearch/)
+
+[二十七、哈希表](https://quakewang.github.io/tech/hashtab/)
+
+[二十八、树及其相关概念](https://quakewang.github.io/tech/abouttree/)
