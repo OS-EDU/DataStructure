@@ -58,3 +58,5 @@
 [二十七、哈希表](https://quakewang.github.io/tech/hashtab/)
 
 [二十八、树及其相关概念](https://quakewang.github.io/tech/abouttree/)
+
+[二十九、树——二叉树遍历](https://quakewang.github.io/tech/binarytree01/)
