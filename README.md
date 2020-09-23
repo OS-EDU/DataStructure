@@ -55,7 +55,7 @@
 
 [二十六、查找——斐波那契查找（失败）](https://quakewang.github.io/tech/fibonaccisearch/)
 
-[二十七、哈希表](https://quakewang.github.io/tech/hashtab/)
+[二十七、哈希表（未更新）](https://quakewang.github.io/tech/hashtab/)
 
 [二十八、树及其相关概念](https://quakewang.github.io/tech/abouttree/)
 
