@@ -109,6 +109,21 @@ class BinaryTree {
         }
     }
 
+    //递归删除节点
+    public void delNode(int no) {
+        if (root != null) {
+            //如果只有一个root节点，这里立即判断root是不是就是需要删除的节点
+            if (root.getNo() == no) {
+                root = null;
+            } else {
+                //递归删除
+                root.delNode(no);
+            }
+        } else {
+            System.out.println("空树，无可删除节点~~~~");
+        }
+    }
+
 }
 
 // 先创建HeroNode结点
@@ -272,5 +287,37 @@ class HeroNode {
             return this;
         }
         return resNode;
+    }
+
+    /**
+     * 递归删除节点
+     * 说明：
+     * 1、如果删除的节点是叶子节点，则删除该节点
+     * 2、如果删除的节点是非叶子节点，则删除该树
+     */
+    public void delNode(int no) {
+        //思路：
+        /**
+         * 1、因为该二叉树是单向的，所以是判断当前节点的子节点是否为需要删除的节点，而不能去判断当前这个节点是不是需要删除节点
+         * 2、如果当前节点的左子节点不为空，并且左子节点就是需要删除的节点，就将this.left = null;并且就返回（结束递归删除）
+         * 3、如果当前节点的右子节点不为空，并且右子节点就是需要删除的节点，就将this.right = null;并且就返回（结束递归删除）
+         * 4、如果第2和第3步没有删除节点，那么就需要向左子树进行递归删除
+         * 5、如果第4步也没有删除节点，则应当向右子树进行递归删除
+         */
+        if (this.left != null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+        if (this.right != null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
+
+        if (this.left != null) {
+            this.left.delNode(no);
+        }
+        if (this.right != null) {
+            this.right.delNode(no);
+        }
     }
 }
