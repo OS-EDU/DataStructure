@@ -44,6 +44,11 @@ public class BinaryTreeDemo {
             System.out.printf("找到该节点，信息为 no=%d name=%s", resNode.getNo(), resNode.getName());
         }
         System.out.println();
+
+        //测试删除
+        binaryTree.delNode(2);
+        System.out.println("删除后前序遍历如下：");
+        binaryTree.preOrder();
     }
 }
 
