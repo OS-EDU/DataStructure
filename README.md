@@ -60,3 +60,5 @@
 [二十八、树及其相关概念](https://quakewang.github.io/tech/abouttree/)
 
 [二十九、树——二叉树遍历](https://quakewang.github.io/tech/binarytree01/)
+
+[三十、树——二叉树查找](https://quakewang.github.io/tech/binarytreesearch/)
