@@ -12,6 +12,8 @@ public class ArrBinaryTreeDemo {
         arrBinaryTree.preOrder();
         System.out.println("中序遍历结果如下：");
         arrBinaryTree.infixOrder();
+        System.out.println("后序遍历结果如下：");
+        arrBinaryTree.postOrder();
     }
 
 }
