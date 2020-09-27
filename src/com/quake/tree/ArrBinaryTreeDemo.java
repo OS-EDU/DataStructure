@@ -5,6 +5,11 @@ package com.quake.tree;
  * @create 2020-09-27 22:01
  */
 public class ArrBinaryTreeDemo {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        ArrBinaryTree arrBinaryTree = new ArrBinaryTree(arr);
+        arrBinaryTree.preOrder();
+    }
 
 }
 
