@@ -5,6 +5,7 @@ package com.quake.tree;
  * @create 2020-09-27 22:01
  */
 public class ArrBinaryTreeDemo {
+
 }
 
 // 编写一个类，实现顺序存储二叉树遍历
@@ -13,6 +14,11 @@ class ArrBinaryTree {
 
     public ArrBinaryTree(int[] arr) {
         this.arr = arr;
+    }
+
+    // 重载preOrder
+    public void preOrder() {
+        this.preOrder(0);
     }
 
     /**
