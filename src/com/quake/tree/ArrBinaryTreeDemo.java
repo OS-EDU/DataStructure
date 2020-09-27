@@ -8,7 +8,10 @@ public class ArrBinaryTreeDemo {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         ArrBinaryTree arrBinaryTree = new ArrBinaryTree(arr);
+        System.out.println("前序遍历结果如下：");
         arrBinaryTree.preOrder();
+        System.out.println("中序遍历结果如下：");
+        arrBinaryTree.infixOrder();
     }
 
 }
