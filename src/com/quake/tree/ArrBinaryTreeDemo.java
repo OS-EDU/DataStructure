@@ -26,6 +26,12 @@ class ArrBinaryTree {
         this.preOrder(0);
     }
 
+    // 重载infixOrder
+    public void infixOrder() {
+        this.infixOrder(0);
+    }
+
+
     /**
      * 编写一个方法，实现顺序存储二叉树的前序遍历
      *
@@ -45,6 +51,24 @@ class ArrBinaryTree {
         // 向右递归遍历
         if ((index * 2 + 2) < arr.length) {
             preOrder(2 * index + 2);
+        }
+    }
+
+    // 顺序存储二叉树的中序遍历
+    public void infixOrder(int index) {
+        // 先判断数组是否为空
+        if (arr == null || arr.length == 0) {
+            System.out.println("数组为空，无法完成相关遍历");
+        }
+        // 向左递归遍历
+        if ((index * 2 + 1) < arr.length) {
+            infixOrder(index * 2 + 1);
+        }
+        // 输出当前这个元素
+        System.out.println(arr[index]);
+        // 向右递归遍历
+        if ((index * 2 + 2) < arr.length) {
+            infixOrder(index * 2 + 2);
         }
     }
 }
