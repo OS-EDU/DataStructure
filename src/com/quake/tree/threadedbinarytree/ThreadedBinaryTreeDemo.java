@@ -5,6 +5,7 @@ package com.quake.tree.threadedbinarytree;
  * @create 2020-10-04 13:36
  */
 public class ThreadedBinaryTreeDemo {
+
 }
 
 // 定义ThreadedBinaryTree
@@ -17,6 +18,11 @@ class ThreadedBinaryTree {
 
     public void setRoot(HeroNode root) {
         this.root = root;
+    }
+
+    //重载threadNodes方法
+    public void threadedNodes() {
+        this.threadedNodes(root);
     }
 
     public void threadedNodes(HeroNode node) {
