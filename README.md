@@ -61,4 +61,6 @@
 
 [二十九、树——二叉树遍历](https://quakewang.github.io/tech/binarytree01/)
 
-[三十、树——二叉树查找](https://quakewang.github.io/tech/binarytreesearch/)
+[三十、树——二叉树查找以及删除结点](https://quakewang.github.io/tech/binarytreesearch/)
+
+[三十一、树——顺序存储二叉树遍历](https://quakewang.github.io/tech/arraybinarytree/)
