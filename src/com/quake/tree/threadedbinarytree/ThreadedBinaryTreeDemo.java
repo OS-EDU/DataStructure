@@ -7,6 +7,19 @@ package com.quake.tree.threadedbinarytree;
 public class ThreadedBinaryTreeDemo {
 }
 
+// 定义ThreadedBinaryTree
+class ThreadedBinaryTree {
+    private HeroNode root;
+
+    // 为了实现线索化，需要创建要给指向当前结点的前驱结点的指针
+    // 在递归进行线索化时，pre总是保留前一个结点
+    private HeroNode pre = null;
+
+    public void setRoot(HeroNode root) {
+        this.root = root;
+    }
+}
+
 // 创建HeroNode结点
 class HeroNode {
     private int no;
