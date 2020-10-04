@@ -18,6 +18,37 @@ class ThreadedBinaryTree {
     public void setRoot(HeroNode root) {
         this.root = root;
     }
+
+    public void threadedNodes(HeroNode node) {
+        // 如果node == null 不能线索化
+        if (node == null) {
+            return;
+        }
+
+        // （一）先线索化左子树
+        threadedNodes(node.getLeft());
+
+        // （二）线索化当前结点【难点】
+        // 处理当前结点的前驱结点
+        if (node.getLeft() == null) {
+            // 当前结点的左指针
+            node.setLeft(pre);
+            // 修改当前结点的左指针的类型，指向前驱结点
+            node.setLeftType(1);
+        }
+        // 处理后继结点
+        if (pre != null && pre.getRight() == null) {
+            // 让前驱结点的右指针指向当前结点
+            pre.setRight(node);
+            // 修改前驱结点的右指针类型
+            node.setRightType(1);
+        }
+        // ！！！每处理一个结点后。让当前结点指向下一个结点的前驱结点
+        pre = node;
+
+        // （三）再线索化右子树
+        threadedNodes(node.getRight());
+    }
 }
 
 // 创建HeroNode结点
