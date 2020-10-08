@@ -1,10 +1,18 @@
 package com.quake.tree;
 
+import java.util.Arrays;
+
 /**
  * @author AKA二夕
  * @create 2020-10-08 20:00
  */
 public class HeapSort {
+    public static void main(String[] args) {
+        //要求将数组进行升序排序
+        int[] arr = {4, 6, 8, 5, 9, -1};
+        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 
     // 编写一个堆排序的方法
     public static void heapSort(int[] arr) {
