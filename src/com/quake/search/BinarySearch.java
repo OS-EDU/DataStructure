@@ -16,6 +16,7 @@ public class BinarySearch {
         System.out.println("resIndexList = " + resIndexList);
         int j = binarySearch01(arr, 0, arr.length - 1, 23);
         System.out.println("i = " + j);
+        System.out.println("hello world");
     }
 
     /**
