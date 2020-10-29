@@ -40,7 +40,7 @@ public class HeapSort {
      *
      * @param arr    待调整的数组
      * @param i      表示非叶子结点在数组中的索引
-     * @param length 表示对应多少个元素继续调整，length是在逐渐的减少
+     * @param length 表示对应多少个元素进行调整，length是在逐渐的减少
      */
     public static void adjustHeap(int[] arr, int i, int length) {
         int temp = arr[i];// 先取出当前元素的值，保存在临时变量
