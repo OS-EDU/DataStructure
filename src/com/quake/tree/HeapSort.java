@@ -19,7 +19,7 @@ public class HeapSort {
         int temp = 0;
 
         // 1、将无序序列构建成一个堆，根据升序降序需求选择大顶堆或小顶堆
-        for (int i = arr.length / 2; i >= 0; i--) {
+        for (int i = arr.length / 2 - 1; i >= 0; i--) {
             adjustHeap(arr, i, arr.length);
         }
 
