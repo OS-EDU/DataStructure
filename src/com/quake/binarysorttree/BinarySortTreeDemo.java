@@ -84,4 +84,25 @@ class Node {
             return this.right.search(value);
         }
     }
+
+    /**
+     * 查找要删除结点的父结点
+     * @param value 需要查找结点的值
+     * @return 返回的是需要删除结点的父结点，如果没有就返回null
+     */
+    public Node searchParent(int value) {
+        // 如果当前结点就是需要删除的结点的父结点，直接返回即可
+        if ((this.left != null && this.left.value == value) || (this.right != null && this.right.value == value)) {
+            return this;
+        } else {
+            // 如果要查找的值小于当前结点的值，并且当前结点的左子结点不为空
+            if (value < this.value && this.left != null) {
+                return this.left.searchParent(value);
+            } else if (value >= this.value && this.right != null) {
+                return this.right.searchParent(value);
+            } else {
+                return null;// 没有找到父结点
+            }
+        }
+    }
 }
