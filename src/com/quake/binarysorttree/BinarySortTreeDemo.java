@@ -51,5 +51,16 @@ class Node {
         }
     }
 
+    // 中序遍历
+    public void infixOrder() {
+        if (this.left != null) {
+            this.left.infixOrder();
+        }
+        System.out.println(this);
+        if (this.right != null) {
+            this.right.infixOrder();
+        }
+    }
+
 
 }
