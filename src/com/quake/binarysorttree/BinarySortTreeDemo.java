@@ -62,5 +62,26 @@ class Node {
         }
     }
 
-
+    /**
+     * 查找需要删除的结点
+     * @param value 需要删除的结点的值
+     * @return 如果找到就返回该结点，否则返回null
+     */
+    public Node search(int value) {
+        if (value == this.value) {// 找到，就是当前结点
+            return this;
+        } else if (value < this.value) {// 如果查找的值小于当前结点的值，向左子树递归查找
+            // 如果左子树为空
+            if (this.left == null) {
+                return null;
+            }
+            return this.left.search(value);
+        } else {// 如果查找的值不小于当前结点的值，向右子树递归查找
+            // 如果右子树为空
+            if (this.right == null) {
+                return null;
+            }
+            return this.right.search(value);
+        }
+    }
 }
