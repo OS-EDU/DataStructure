@@ -22,6 +22,35 @@ class BinarySortTree {
             root.add(node);
         }
     }
+
+    // 中序遍历
+    public void infixOrder() {
+        if (root != null) {
+            root.infixOrder();
+        } else {
+            System.out.println("二叉排序树为空，不能遍历~~~");
+        }
+    }
+
+    // 查找需要删除的结点
+    public Node search(int value) {
+        if (root == null) {
+            return null;
+        } else {
+            return root.search(value);
+        }
+    }
+
+    // 查找父结点
+    public Node searchParent(int value) {
+        if (root == null) {
+            return null;
+        } else {
+            return root.searchParent(value);
+        }
+    }
+
+
 }
 
 // 创建Node结点
