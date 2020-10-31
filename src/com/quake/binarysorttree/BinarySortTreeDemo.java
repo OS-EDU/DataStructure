@@ -14,6 +14,14 @@ class BinarySortTree {
         return root;
     }
 
+    // 添加结点的方法
+    public void add(Node node) {
+        if (root == null) {
+            root = node;// 如果root为空，则直接让root指向node
+        } else {
+            root.add(node);
+        }
+    }
 }
 
 // 创建Node结点
