@@ -5,6 +5,23 @@ package com.quake.binarysorttree;
  * @create 2020-10-31 23:13
  */
 public class BinarySortTreeDemo {
+    public static void main(String[] args) {
+        int[] arr = {7, 3, 10, 12, 5, 1, 9, 2};
+        BinarySortTree binarySortTree = new BinarySortTree();
+        //循环的添加节点到二叉排序树
+        for (int value : arr) {
+            binarySortTree.add(new Node(value));
+        }
+
+        //中序遍历二叉排序树
+        System.out.println("中序遍历二叉排序树：");
+        binarySortTree.infixOrder();
+
+        //测试删除节点
+        binarySortTree.delNode(7);
+        System.out.println("删除节点后：");
+        binarySortTree.infixOrder();
+    }
 }
 
 class BinarySortTree {
