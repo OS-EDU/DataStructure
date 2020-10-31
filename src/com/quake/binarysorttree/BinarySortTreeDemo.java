@@ -7,6 +7,14 @@ package com.quake.binarysorttree;
 public class BinarySortTreeDemo {
 }
 
+class BinarySortTree {
+    private Node root;
+
+    public Node getRoot() {
+        return root;
+    }
+
+}
 
 // 创建Node结点
 class Node {
@@ -64,6 +72,7 @@ class Node {
 
     /**
      * 查找需要删除的结点
+     *
      * @param value 需要删除的结点的值
      * @return 如果找到就返回该结点，否则返回null
      */
@@ -87,6 +96,7 @@ class Node {
 
     /**
      * 查找要删除结点的父结点
+     *
      * @param value 需要查找结点的值
      * @return 返回的是需要删除结点的父结点，如果没有就返回null
      */
