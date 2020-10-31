@@ -50,14 +50,90 @@ class BinarySortTree {
         }
     }
 
+    /**
+     * 编写方法：
+     * 1、返回的是以node为根结点的二叉排序树的最小结点的值
+     * 2、删除node为根结点的二叉排序树的最小结点
+     *
+     * @param node 传入的结点（当做二叉排序树的根结点）
+     * @return 返回的 以node为根结点的二叉排序树的最小结点的值
+     */
+    public int delRightTreeMin(Node node) {
+        Node target = node;
+        // 循环的查找左子结点，就会找到最小的值
+        while (target.left != null) {
+            target = target.left;
+        }
+        // 这时target就指向了最小结点
+        // 删除最小结点
+        delNode(target.value);
+        return target.value;
+    }
 
+    // 删除结点
+    public void delNode(int value) {
+        if (root == null) {
+            return;
+        } else {
+            // 1、需要先找到要删除的节点 targetNode
+            Node targetNode = search(value);
+            // 如果没有找到要删除的节点
+            if (targetNode == null) {
+                return;
+            }
+            // 2、如果当前这颗二叉排序树只一个节点
+            if (root.left == null && root.right == null) {
+                root = null;
+                return;
+            }
+            //3 、去找到targetNode的父节点
+            Node parent = searchParent(value);
+            // 4、如果要删除的节点是叶子节点
+            if (targetNode.left == null && targetNode.right == null) {
+                // 判断targetNode是父节点的左子节点还是右子节点
+                if (parent.left != null && parent.left.value == value) {//是左子节点
+                    parent.left = null;
+                } else if (parent.right != null && parent.right.value == value) {//是右子节点
+                    parent.right = null;
+                }
+            } else if (targetNode.left != null && targetNode.right != null) {//删除的是有两颗子树的节点
+                int minVal = delRightTreeMin(targetNode.right);
+                targetNode.value = minVal;
+            } else {// 删除只有一颗子树的节点
+                // 如果要删除的节点有左子节点
+                if (targetNode.left != null) {
+                    if (parent != null) {
+                        // 如果targetNode是parent的左子节点
+                        if (targetNode.left != null) {
+                            parent.left = targetNode.left;
+                        } else {//targetNode是parent的右子节点
+                            parent.right = targetNode.left;
+                        }
+                    } else {
+                        root = targetNode.left;
+                    }
+                } else {// 如果需要删除的节点有右子节点
+                    if (parent != null) {
+                        // 如果targetNode是parent的左子节点
+                        if (parent.left.value == value) {
+                            parent.left = targetNode.right;
+                        } else {// 如果targetNode是parent的右子节点
+                            parent.right = targetNode.right;
+                        }
+                    } else {
+                        root = targetNode.right;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // 创建Node结点
 class Node {
-    private int value;
-    private Node left;
-    private Node right;
+    int value;
+    Node left;
+    Node right;
 
     public Node(int value) {
         this.value = value;
