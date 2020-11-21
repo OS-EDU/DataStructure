@@ -121,7 +121,7 @@ class BinarySortTree {
                 if (targetNode.left != null) {
                     if (parent != null) {
                         // 如果targetNode是parent的左子节点
-                        if (targetNode.left != null) {
+                        if (parent.left.value == targetNode.value) {
                             parent.left = targetNode.left;
                         } else {//targetNode是parent的右子节点
                             parent.right = targetNode.left;
