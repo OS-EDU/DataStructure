@@ -132,7 +132,7 @@ class BinarySortTree {
                 } else {// 如果需要删除的节点有右子节点
                     if (parent != null) {
                         // 如果targetNode是parent的左子节点
-                        if (parent.left.value == value) {
+                        if (parent.left.value == targetNode.value) {
                             parent.left = targetNode.right;
                         } else {// 如果targetNode是parent的右子节点
                             parent.right = targetNode.right;
