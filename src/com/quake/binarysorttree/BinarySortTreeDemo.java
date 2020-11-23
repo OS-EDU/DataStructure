@@ -8,18 +8,18 @@ public class BinarySortTreeDemo {
     public static void main(String[] args) {
         int[] arr = {7, 3, 10, 12, 5, 1, 9, 2};
         BinarySortTree binarySortTree = new BinarySortTree();
-        //循环的添加节点到二叉排序树
+        // 循环的添加结点到二叉排序树
         for (int value : arr) {
             binarySortTree.add(new Node(value));
         }
 
-        //中序遍历二叉排序树
+        // 中序遍历二叉排序树
         System.out.println("中序遍历二叉排序树：");
         binarySortTree.infixOrder();
 
-        //测试删除节点
+        //测试删除结点
         binarySortTree.delNode(7);
-        System.out.println("删除节点后：");
+        System.out.println("删除结点后：");
         binarySortTree.infixOrder();
     }
 }
@@ -92,49 +92,49 @@ class BinarySortTree {
         if (root == null) {
             return;
         } else {
-            // 1、需要先找到要删除的节点 targetNode
+            // 1、需要先找到要删除的结点 targetNode
             Node targetNode = search(value);
-            // 如果没有找到要删除的节点
+            // 如果没有找到要删除的结点
             if (targetNode == null) {
                 return;
             }
-            // 2、如果当前这颗二叉排序树只一个节点
+            // 2、如果当前这颗二叉排序树只有一个结点
             if (root.left == null && root.right == null) {
                 root = null;
                 return;
             }
-            //3 、去找到targetNode的父节点
+            // 3 、去找到targetNode的父结点
             Node parent = searchParent(value);
-            // 4、如果要删除的节点是叶子节点
+            // 4、如果要删除的节点是叶子结点
             if (targetNode.left == null && targetNode.right == null) {
-                // 判断targetNode是父节点的左子节点还是右子节点
-                if (parent.left != null && parent.left.value == value) {//是左子节点
+                // 判断targetNode是父结点的左子结点还是右子结点
+                if (parent.left != null && parent.left.value == value) {// 是左子结点
                     parent.left = null;
-                } else if (parent.right != null && parent.right.value == value) {//是右子节点
+                } else if (parent.right != null && parent.right.value == value) {// 是右子结点
                     parent.right = null;
                 }
-            } else if (targetNode.left != null && targetNode.right != null) {//删除的是有两颗子树的节点
+            } else if (targetNode.left != null && targetNode.right != null) {// 删除的是有两棵子树的结点
                 int minVal = delRightTreeMin(targetNode.right);
                 targetNode.value = minVal;
-            } else {// 删除只有一颗子树的节点
-                // 如果要删除的节点有左子节点
+            } else {// 删除只有一颗子树的结点
+                // 如果要删除的节点有左子结点
                 if (targetNode.left != null) {
                     if (parent != null) {
-                        // 如果targetNode是parent的左子节点
+                        // 如果targetNode是parent的左子结点
                         if (parent.left.value == targetNode.value) {
                             parent.left = targetNode.left;
-                        } else {//targetNode是parent的右子节点
+                        } else {//targetNode是parent的右子结点
                             parent.right = targetNode.left;
                         }
                     } else {
                         root = targetNode.left;
                     }
-                } else {// 如果需要删除的节点有右子节点
+                } else {// 如果需要删除的结点有右子结点
                     if (parent != null) {
-                        // 如果targetNode是parent的左子节点
+                        // 如果targetNode是parent的左子结点
                         if (parent.left.value == targetNode.value) {
                             parent.left = targetNode.right;
-                        } else {// 如果targetNode是parent的右子节点
+                        } else {// 如果targetNode是parent的右子结点
                             parent.right = targetNode.right;
                         }
                     } else {
