@@ -94,6 +94,21 @@ class Node {
         right = right.right;
         // 把当前结点的左子树（左子结点）设置成新的结点
         left = newNode;
+    }
 
+    // 右旋转方法
+    private void rightRotate() {
+        // 创建新的结点，以当前根结点的值
+        Node newNode = new Node(value);
+        // 把新的结点的右子树设置成当前结点的右子树
+        newNode.right = right;
+        // 把新的结点的左子树设置成当前结点的左子树的右子树
+        newNode.left = left.right;
+        // 把当前结点的值替换成左子结点的值
+        value = left.value;
+        // 把当前结点的左子树设置成当前结点的左子树的左子树
+        left = left.left;
+        // 把当前结点的右子树（右子结点）设置成新结点
+        right = newNode;
     }
 }
