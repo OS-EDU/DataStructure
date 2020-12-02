@@ -7,6 +7,17 @@ package com.quake.avl;
 public class AVLTreeDemo {
 }
 
+// 创建AVLTree
+class AVLTree {
+    private Node root;
+
+    public Node getRoot() {
+        return root;
+    }
+
+
+}
+
 // 创建Node类表示结点
 class Node {
     int value;
