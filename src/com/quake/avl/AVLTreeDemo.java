@@ -46,6 +46,35 @@ class Node {
                 this.right.add(node);
             }
         }
+
+        // 当添加一个结点后，如果：（右子树的高度 - 左子树的高度）> 1，左旋转
+        if (rightHeight() - leftHeight() > 1) {
+            // 如果它的右子树的左子树的高度大于它右子树的右子树高度
+            if (right != null && right.leftHeight() > right.rightHeight()) {
+                // 先对右子树进行旋转
+                right.rightRotate();
+                // 然后再对当前结点进行左旋转
+                leftRotate();// 左旋转
+            } else {
+                // 直接进行左旋转
+                leftRotate();
+            }
+            return;// 必须要！！！
+        }
+
+        // 当添加完一个结点后，如果（左子树的高度 - 右子树的高度）> 1，右旋转
+        if (leftHeight() - rightHeight() > 1) {
+            // 如果它的左子树的右子树的高度大于它的左子树的左子树的高度
+            if (left != null && left.rightHeight() > left.leftHeight()) {
+                // 先对左子结点进行右旋转
+                left.leftRotate();
+                // 然后再对当前结点进行右旋转
+                rightRotate();
+            } else {
+                // 直接进行右旋转
+                rightRotate();
+            }
+        }
     }
 
     // 中序遍历
