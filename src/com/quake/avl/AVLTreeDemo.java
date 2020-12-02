@@ -59,5 +59,8 @@ class Node {
         }
     }
 
-
+    // 返回以该结点为根结点树的高度
+    public int height() {
+        return Math.max(left == null ? 0 : left.height(), right == null ? 0 : right.height()) + 1;
+    }
 }
