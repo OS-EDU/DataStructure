@@ -5,7 +5,21 @@ package com.quake.avl;
  * @create 2020-12-02 16:08
  */
 public class AVLTreeDemo {
+    public static void main(String[] args) {
+        int[] arr = {10, 11, 7, 6, 8, 9};
+        AVLTree avlTree = new AVLTree();
+        for (int value : arr) {
+            avlTree.add(new Node(value));
+        }
+        System.out.println("中序遍历");
+        avlTree.infixOrder();
 
+        System.out.println("在平衡处理~~");
+        System.out.println("树的高度=" + avlTree.getRoot().height()); //3
+        System.out.println("树的左子树高度=" + avlTree.getRoot().leftHeight()); // 2
+        System.out.println("树的右子树高度=" + avlTree.getRoot().rightHeight()); // 2
+        System.out.println("当前的根结点=" + avlTree.getRoot());//8
+    }
 }
 
 // 创建AVLTree
