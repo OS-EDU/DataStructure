@@ -15,7 +15,23 @@ class AVLTree {
         return root;
     }
 
+    // 添加结点的方法
+    public void add(Node node) {
+        if (node == null) {
+            root = node;
+        } else {
+            root.add(node);
+        }
+    }
 
+    // 中序遍历
+    public void infixOrder() {
+        if (root != null) {
+            root.infixOrder();
+        } else {
+            System.out.println("该树为空，无法完成遍历");
+        }
+    }
 }
 
 // 创建Node类表示结点
