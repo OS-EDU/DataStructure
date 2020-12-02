@@ -5,6 +5,7 @@ package com.quake.avl;
  * @create 2020-12-02 16:08
  */
 public class AVLTreeDemo {
+
 }
 
 // 创建AVLTree
@@ -17,7 +18,7 @@ class AVLTree {
 
     // 添加结点的方法
     public void add(Node node) {
-        if (node == null) {
+        if (root == null) {
             root = node;
         } else {
             root.add(node);
