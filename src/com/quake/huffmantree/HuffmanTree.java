@@ -8,6 +8,11 @@ import java.util.Collections;
  * @create 2020-12-28 15:16
  */
 public class HuffmanTree {
+    public static void main(String[] args) {
+        int[] arr = {3, 6, 9, 14, 8, 5, 4, 19, 25};
+        Node huffmanTree = createHuffmanTree(arr);
+        preOrder(huffmanTree);
+    }
 
     // 编写一个前序遍历的方法
     public static void preOrder(Node root) {
