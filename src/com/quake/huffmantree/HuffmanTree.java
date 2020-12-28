@@ -1,12 +1,56 @@
 package com.quake.huffmantree;
 
-import java.time.temporal.ValueRange;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author AKA二夕
  * @create 2020-12-28 15:16
  */
 public class HuffmanTree {
+
+    /**
+     * 创建哈夫曼树的方法
+     *
+     * @param arr 需要创建哈夫曼树的数组
+     * @return 创建好后的哈夫曼树的root结点
+     */
+    public static Node createHuffmanTree(int[] arr) {
+        /**
+         * 1、遍历arr数组；
+         * 2、将arr的每个元素构成一个Node
+         * 3、将Node放入到ArrayList中
+         */
+        ArrayList<Node> nodes = new ArrayList<>();
+        for (int value : arr) {
+            nodes.add(new Node(value));
+        }
+
+        // 进行循环处理
+        while (nodes.size() > 1) {
+            // 排序 从小到大
+            Collections.sort(nodes);
+
+            System.out.println("nodes = " + nodes);
+
+            // 取出根结点权值最小的两棵二叉树
+            // 1、取出权值最小的结点（二叉树）
+            Node leftNode = nodes.get(0);
+            // 2、取出权值第二小的结点（二叉树）
+            Node rightNode = nodes.get(1);
+            // 3、构建一颗新的二叉树
+            Node parent = new Node(leftNode.value + rightNode.value);
+            parent.left = leftNode;
+            parent.right = rightNode;
+            // 4、从ArrayList删除处理过的二叉树
+            nodes.remove(leftNode);
+            nodes.remove(rightNode);
+            // 5、将parent结点加入到nodes中
+            nodes.add(parent);
+        }
+        // 返回哈夫曼树的root结点
+        return nodes.get(0);
+    }
 }
 
 
