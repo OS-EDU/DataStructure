@@ -9,6 +9,15 @@ import java.util.Collections;
  */
 public class HuffmanTree {
 
+    // 编写一个前序遍历的方法
+    public static void preOrder(Node root) {
+        if (root != null) {
+            root.preOrder();
+        } else {
+            System.out.println("是空树，无法完成遍历~~~");
+        }
+    }
+
     /**
      * 创建哈夫曼树的方法
      *
