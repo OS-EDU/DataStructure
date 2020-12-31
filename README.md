@@ -66,3 +66,5 @@
 [三十一、树——顺序存储二叉树遍历](https://quakewang.github.io/tech/arraybinarytree/)
 
 [三十二、排序——堆排序](https://quakewang.github.io/tech/heapsort/)
+
+[三十三、二叉排序树](https://quakewang.github.io/tech/bst/)
