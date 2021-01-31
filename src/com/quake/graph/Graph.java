@@ -14,12 +14,12 @@ public class Graph {
 
     public static void main(String[] args) {
         int n = 8;//节点个数
-        String Vertexs[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
+        String vertexs[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
 
         //创建图对象
         Graph graph = new Graph(n);
         //循环的添加顶点
-        for (String vertex : Vertexs) {
+        for (String vertex : vertexs) {
             graph.insertVertex(vertex);
         }
 
@@ -46,7 +46,7 @@ public class Graph {
         numOfEdges = 0;
     }
 
-    // 返回节点的个数
+    // 返回结点的个数
     public int getNumOfVertex() {
         return vertexList.size();
     }
