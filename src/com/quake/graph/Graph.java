@@ -11,6 +11,7 @@ public class Graph {
     private ArrayList<String> vertexList;// 存储顶点集合
     private int[][] edges;// 存储图对应的邻接矩阵
     private int numOfEdges;// 表示边的数目
+    private boolean[] isVisited;// 定义一个数组boolean 记录某个结点是否被访问
 
     public static void main(String[] args) {
         int n = 8;//节点个数
@@ -44,6 +45,7 @@ public class Graph {
         edges = new int[n][n];
         vertexList = new ArrayList<String>(n);
         numOfEdges = 0;
+        isVisited = new boolean[n];
     }
 
     // 返回结点的个数
@@ -85,6 +87,31 @@ public class Graph {
         edges[v1][v2] = weight;
         edges[v2][v1] = weight;
         numOfEdges++;// 边的条数 +1
+    }
+
+    /**
+     * 得到第一个邻接结点的下标
+     *
+     * @param index 当前结点的索引
+     * @return 如果存在就返回对应的下标，否则返回-1
+     */
+    public int getFirstNeighbor(int index) {
+        for (int j = 0; j < vertexList.size(); j++) {
+            if (edges[index][j] > 0) {
+                return j;
+            }
+        }
+        return -1;
+    }
+
+    // 根绝前一个邻接结点的下标来获取下一个邻接结点
+    public int getNextNeighbor(int v1, int v2) {
+        for (int j = v2 + 1; j < vertexList.size(); j++) {
+            if (edges[v1][j] > 0) {
+                return j;
+            }
+        }
+        return -1;
     }
 
 }
