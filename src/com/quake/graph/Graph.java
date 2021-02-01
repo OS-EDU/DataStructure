@@ -2,6 +2,7 @@ package com.quake.graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 /**
  * @author AKA二夕
@@ -37,6 +38,10 @@ public class Graph {
 
         //显示邻接矩阵
         graph.showGraph();
+
+        // 测试dfs()
+        System.out.println("测试深度优先遍历");
+        graph.dfs();
     }
 
     // 构造器
@@ -73,6 +78,11 @@ public class Graph {
     // 插入结点
     public void insertVertex(String vertex) {
         vertexList.add(vertex);
+    }
+
+    // 返回结点 i（下标）对应的数据 0->"A" 1->"B" 2->"C"
+    public String getValueByIndex(int i) {
+        return vertexList.get(i);
     }
 
     /**
@@ -113,5 +123,39 @@ public class Graph {
         }
         return -1;
     }
+
+    /**
+     * 深度优先遍历算法
+     *
+     * @param isVisited 用于标记结点是否被访问
+     * @param i         第一次就是0
+     */
+    private void dfs(boolean[] isVisited, int i) {
+        // 首先访问该结点
+        System.out.print(getValueByIndex(i) + "->");
+        // 将结点设置为已经访问
+        isVisited[i] = true;
+        // 得到下一个邻接结点的坐标
+        int w = getFirstNeighbor(i);
+        while (w != -1) {
+            if (!isVisited[w]) {
+                dfs(isVisited, w);
+            }
+            // 如果w结点已经被访问过
+            w = getNextNeighbor(i, w);
+        }
+    }
+
+    // 重载dfs()，遍历所有的结点，并进行dfs
+    public void dfs() {
+        isVisited = new boolean[vertexList.size()];
+        // 遍历所有的结点，并进行dfs【回溯】
+        for (int i = 0; i < getNumOfVertex(); i++) {
+            if (!isVisited[i]) {
+                dfs(isVisited, i);
+            }
+        }
+    }
+
 
 }
