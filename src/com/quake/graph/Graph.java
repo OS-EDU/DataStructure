@@ -42,6 +42,12 @@ public class Graph {
         // 测试dfs()
         System.out.println("测试深度优先遍历");
         graph.dfs();
+
+        System.out.println();// 换行
+
+        //bfs遍历
+        System.out.println("广度优先遍历");
+        graph.bfs();
     }
 
     // 构造器
@@ -157,5 +163,47 @@ public class Graph {
         }
     }
 
+    // 对一个结点进行广度优先遍历的方法
+    private void bfs(boolean[] isVisited, int i) {
+        int u;// 表示队列的头结点对应的下标
+        int w;// 邻接结点w
+        // 队列，用于记录结点的访问顺序
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        // 访问结点，输出结点信息
+        System.out.print(getValueByIndex(i) + "->");
+        // 标记为已访问
+        isVisited[i] = true;
+        // 将结点加入到队列
+        queue.addLast(i);
+
+        while (!queue.isEmpty()) {
+            // 取出队列头结点的下标
+            u = (Integer) queue.removeFirst();
+            // 得到第一个邻接结点的下标w
+            w = getFirstNeighbor(u);
+            while (w != -1) {
+                // 是否访问过
+                if (!isVisited[w]) {
+                    System.out.print(getValueByIndex(w) + "->");
+                    // 标记为已经访问
+                    isVisited[w] = true;
+                    // 入队
+                    queue.addLast(w);
+                }
+                // 以u为前序点，为w后面的下一个邻接点
+                w = getNextNeighbor(u, w);
+            }
+        }
+    }
+
+    // 重载bfs，遍历所有的结点，都进行广度优先遍历
+    public void bfs() {
+        isVisited = new boolean[vertexList.size()];
+        for (int i = 0; i < getNumOfVertex(); i++) {
+            if (!isVisited[i]) {
+                bfs(isVisited, i);
+            }
+        }
+    }
 
 }
